@@ -55,6 +55,10 @@ patch('/dates/:id') do
   else
     erb(:date_errors)
   end
+end
 
-
+delete('/dates/:id') do
+  @date_idea = DateIdea.find(params.fetch('id').to_i)
+  @date_idea.destroy
+  redirect('/dates')
 end
