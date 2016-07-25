@@ -22,7 +22,7 @@ describe 'Add a date path', {:type => :feature} do
 
  describe 'Update a date path', {:type => :feature} do
   it'allows users to update date information' do
-    DateIdea.create({:name => 'Ikea'})
+    DateIdea.create({:name => 'Ikea', :rating => 0})
     visit '/dates'
     click_link 'Ikea'
     click_link 'Edit Date'
@@ -30,11 +30,12 @@ describe 'Add a date path', {:type => :feature} do
     click_button 'Edit Date'
     expect(page).to have_content'Ikea Mega Store'
   end
-  it 'allows users to delete a date'
-    DateIdea.create({:name => 'Ikea'})
+  it 'allows users to delete a date' do
+    DateIdea.create({:name => 'Ikea', :rating => 0})
     visit '/dates'
     click_link 'Ikea'
     click_link 'Edit Date'
     click_button 'Delete Date'
     expect(page).to have_no_content('Ikea')
+  end
 end
