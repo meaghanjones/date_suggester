@@ -1,0 +1,12 @@
+<h1>Dates</h1>
+  <% if @date_ideas == [] %>
+  <p>There are no dates saved in the database yet.</p>
+  <% else %>
+  <ul>
+    <% @date_ideas.each() do |date_idea| %>
+    <li> <a href='/dates/<%= date.id() %>'><%= date.name() %></a></li>
+    <% end %>
+  </ul>
+  <% end %>
+  <button><a href='/dates/new'>Add a New Store</a></button>
+  <button><a href='/dates'>List of Dates</a></button>
