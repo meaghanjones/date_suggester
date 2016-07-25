@@ -2,7 +2,7 @@
 
   <ul>
     <li><strong>Address:</strong>
-      <% if @date_idea.address.!=("\n, ").&(@date_idea.address.!=('')) %>
+      <% if @date_idea.address.!=("\n,").&(@date_idea.address.!=('')) %>
       <%= @date_idea.address %>
       <% else %>
       no address given
