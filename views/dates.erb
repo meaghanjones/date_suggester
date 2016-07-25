@@ -4,7 +4,7 @@
   <% else %>
   <ul>
     <% @date_ideas.each() do |date_idea| %>
-    <li> <a href='/dates/<%= date.id() %>'><%= date.name() %></a></li>
+    <li> <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a></li>
     <% end %>
   </ul>
   <% end %>

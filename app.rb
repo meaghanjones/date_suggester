@@ -21,7 +21,7 @@ post('/dates') do
   description = params[:description]
   address = "#{street}\n#{city},#{state}"
   @date_idea = DateIdea.create({:name => name, :address => address, :description => description})
-  if @date_idea.save()
+  if @date_idea.save
    redirect('/dates/'.concat(@date_idea.id.to_s))
   else
    erb(:date_errors)
