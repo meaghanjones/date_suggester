@@ -1,0 +1,22 @@
+<h1><%= @date_idea.name %></h1>
+
+<ul>
+  <li><strong>Address:</strong>
+    <% if @date_idea.address.!=("\n,").&(@date_idea.address.!=('')) %>
+    <%= @date_idea.address %>
+    <% else %>
+    no address given
+    <% end %>
+  </li>
+  <li><strong>Description:</strong>
+    <% if @date_idea.description.!=('') %>
+    <%= @date_idea.description %>
+    <% else %>
+    no description given
+    <% end %>
+  </li>
+</ul>
+
+<button><a href='/dates'>Back to Dates</a></button>
+<button><a href='/dates/new'>Add a New Date</a></button>
+<button><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
