@@ -1,6 +1,6 @@
 <h3>Oops! There were some errors:</h3>
 <ul>
-  <% @date_idea.errors().full_messages().each() do |message| %>
+  <% @date_idea.errors.full_messages.each do |message| %>
   <li><%= message %></li>
   <% end %>
 </ul>

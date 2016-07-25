@@ -4,9 +4,9 @@
   <% else %>
   <ul>
     <% @date_ideas.each() do |date_idea| %>
-    <li> <a href='/dates/<%= date.id() %>'><%= date.name() %></a></li>
+    <li> <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a></li>
     <% end %>
   </ul>
   <% end %>
-  <button><a href='/dates/new'>Add a New Store</a></button>
-  <button><a href='/dates'>List of Dates</a></button>
+  <button><a href='/dates/new'>Add a New Date</a></button>
+  <button><a href='/'>Home</a></button>
