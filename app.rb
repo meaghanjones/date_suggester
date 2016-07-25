@@ -21,7 +21,8 @@ post('/dates') do
   state = params[:state]
   description = params[:description]
   address = "#{street}\n#{city},#{state}"
-  @date_idea = DateIdea.create({:name => name, :address => address, :description => description})
+  rating = 0
+  @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating})
   if @date_idea.save
    redirect('/dates/'.concat(@date_idea.id.to_s))
   else
@@ -61,4 +62,11 @@ delete('/dates/:id') do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @date_idea.destroy
   redirect('/dates')
+end
+
+post('/dates/:id/rating') do
+  date_idea = DateIdea.find(params.fetch('id').to_i)
+  rating = params.fetch('rating').to_i
+  date_idea.update({:rating => rating})
+  redirect to("/dates/#{date_idea.id}")
 end
