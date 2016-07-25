@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: date_suggester
+test:
+  adapter: postgresql
+  database: date_suggester
