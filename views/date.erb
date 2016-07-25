@@ -1,5 +1,25 @@
 <h1><%= @date_idea.name %></h1>
+<form action="/dates/<%= @date_idea.id %>/rating"  method="post">
+  <button value=1 name="rating">
+    <span class = "fa <%= (@date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
+  </button>
 
+  <button value=2 name="rating">
+    <span class = "fa <%= (@date_idea.rating().<(2))? 'fa-heart-o':'fa-heart' %>"></span>
+  </button>
+
+  <button value=3 name="rating">
+    <span class = "fa <%= (@date_idea.rating().<(3))? 'fa-heart-o':'fa-heart' %>"></span>
+  </button>
+
+  <button value=4 name="rating">
+    <span class = "fa <%= (@date_idea.rating().<(4))? 'fa-heart-o':'fa-heart' %>"></span>
+  </button>
+
+  <button value=5 name="rating">
+    <span class = "fa <%= (@date_idea.rating().<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+  </button>
+</form>
 <ul>
   <li><strong>Address:</strong>
     <% if @date_idea.address.!=("\n,").&(@date_idea.address.!=('')) %>
