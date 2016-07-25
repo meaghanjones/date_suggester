@@ -12,4 +12,10 @@ describe 'Add a date path', {:type => :feature} do
     click_button 'Add Date'
     expect(page).to have_content('Ikea')
   end
+
+  it('allows users to view a list of dates') do
+   DateIdea.create({:name => 'Ikea'})
+   visit('/dates')
+   expect(page).to have_content('Ikea')
+ end
 end
