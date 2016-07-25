@@ -19,3 +19,7 @@
 
   <button type="submit">Edit Date</button>
 </form>
+<form action="/dates/<%= @date_idea.id %>" method="post">
+   <input type="hidden" name="_method" value="delete">
+   <button type="submit">Delete Date</button>
+</form>
