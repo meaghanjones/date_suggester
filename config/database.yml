@@ -3,4 +3,4 @@ development:
   database: date_suggester
 test:
   adapter: postgresql
-  database: date_suggester
+  database: date_suggester_test

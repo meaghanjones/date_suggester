@@ -36,7 +36,7 @@ get('/dates/:id') do
 end
 
 get('/dates') do
-  @date_ideas = DateIdea.all
+  @date_ideas = DateIdea.order('rating  DESC')
   erb(:dates)
 end
 
