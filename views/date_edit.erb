@@ -1,0 +1,21 @@
+<h1>Update <%=@date_idea.name%> Information</h1>
+<form action="/dates/<%= @date_idea.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= @date_idea.name %>">
+
+  <% if @date_idea.address.==("\n,") %>
+    <label for="address">Address:</label>
+    <textarea rows='3' name="address"></textarea>
+
+  <% else %>
+    <label for="address">Address:</label>
+    <textarea rows="3" name="address" id="address"><%= @date_idea.address %></textarea>
+
+  <% end %>
+
+  <label for="description">Description:</label>
+  <textarea rows="3" name="description" id="description"><%= @date_idea.description %></textarea>
+
+  <button type="submit">Edit Date</button>
+</form>
