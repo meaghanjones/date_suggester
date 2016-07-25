@@ -8,3 +8,17 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
+
+//Mixins
+$pink: lighten(hotpink, 25%);
+$red: lighten(crimson, 25%);
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url("http://www.oceanviolet.com/wp-content/uploads/2014/09/blurred-new-york-city-skyline.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

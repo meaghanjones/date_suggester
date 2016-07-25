@@ -374,16 +374,42 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
+* {
+  font-family: sans-serif; }
+
+body {
+  background-image: url("http://www.oceanviolet.com/wp-content/uploads/2014/09/blurred-new-york-city-skyline.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 .welcome-container {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: inset 0 0 50px #ffe9f4;
   width: 100vw;
   max-width: 768px;
   height: 100vh;
-  background: dimgrey; }
+  background: white; }
+  .welcome-container .icon-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px; }
   .welcome-container .button-container {
-    display: flex; }
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 30%; }
+    .welcome-container .button-container button {
+      cursor: pointer;
+      width: 170px;
+      height: 125px;
+      border-radius: 20px;
+      border: 7px solid #f37c94;
+      background: transparent; }
+      .welcome-container .button-container button a {
+        text-decoration: none; }
 
 /*# sourceMappingURL=app.css.map */
