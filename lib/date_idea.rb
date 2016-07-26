@@ -5,7 +5,7 @@ class DateIdea < ActiveRecord::Base
 
 private
 
-  def titlecase_name do
+  def titlecase_name 
     self.name=(name.titlecase)
   end
 end
