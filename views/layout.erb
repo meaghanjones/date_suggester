@@ -8,14 +8,17 @@
   </head>
   <body>
     <div class="container">
-      <div class="image-container">
-        <img src="../img/LOGO3.png" alt="LOGO2" />
+      <div class="navbar">
+        <a href='/'><img id="logo" src="../img/LOGO3.png" alt="LOGO2" /></a>
+        <div class="navbuttons">
+          <button id="dates"><a href='/dates'>Dates</a></button>
+          <button id="newdates"><a href='/dates/new'>New Date</a></button>
+          <button id="cats"><a href='/tags'>Categories</a></button>
+        </div>
       </div>
-      <button><a href='/'>Home</a></button>
-      <button><a href='/dates'>Dates</a></button>
-      <button><a href='/dates/new'>New Date</a></button>
-      <button><a href='/tags'>Categories</a></button>
+
       <%= yield %>
+
     </div>
   </body>
 </html>

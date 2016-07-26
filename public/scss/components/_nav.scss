@@ -1,0 +1,39 @@
+#logo {
+  margin: 5px;
+  width: auto;
+  height: 100px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+
+
+  .navbuttons {
+    display: flex;
+
+    button {
+      border: none;
+      opacity: 0.75;
+
+      a{
+        text-decoration: none;
+        // font-weight: bold;
+        font-size: 20px;
+      }
+    }
+
+    #dates {
+      background: $pink;
+    }
+
+    #newdates{
+      background: $yellow;
+    }
+
+    #cats{
+      background: $green;
+    }
+
+  }
+}

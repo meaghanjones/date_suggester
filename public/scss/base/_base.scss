@@ -9,10 +9,6 @@ html {
   box-sizing: inherit;
   }
 
-//Mixins
-$pink: lighten(hotpink, 25%);
-$red: lighten(crimson, 25%);
-
 * {
   font-family: sans-serif;
 }
@@ -24,72 +20,20 @@ body {
 }
 
 .container {
+  opacity: 0.85;
   margin: 0 auto;
   padding: 0;
-  box-shadow: inset 0 0 50px $pink;
+
   width: 100vw;
   max-width: 768px;
   height: 100vh;
-  background: lighten(lightgrey, 10%);
+  background: lighten(lightgrey, 12%);
 }
 
-//Mixins and Extends
-@mixin buttonStyle($color) {
-  font-size: 25px;
-
-  margin: 10px;
-  color: white;
-  cursor: pointer;
-  border-radius: 20px;
-  border: none;
-  background-color: $color;
-  box-shadow: 0 9px darken($color, 7%);
-
-  transition: background 0.2s ease;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  &:hover {
-    background: lighten($color, 2%);
-    box-shadow: 0 9px $color;
-  }
-
-  &:active {
-    box-shadow: 0 5px darken($color, 12%);
-    transform: translateY(4px);
-  }
-}
-
-@mixin kaboom {
-  @-webkit-keyframes hvr-pulse-grow {
-    to {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-
-  @keyframes hvr-pulse-grow {
-    to {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-}
-
-@mixin buttonStyle {
-  margin: 10px;
-  color: white;
-  cursor: pointer;
-  border-radius: 20px;
-  border: 7px solid $red;
-  background-color: brown;
-  box-shadow: 5px 5px 5px grey;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-}
+//Variables
+$blue: #87ecd5;
+$green: #b4ea89;
+$yellow: #fbf5a2;
+$pink: #ff9bfd;
+$darkpink: #fd9be0;
+$purple: #da98f0;
