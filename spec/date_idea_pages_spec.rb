@@ -2,6 +2,7 @@ require('spec_helper')
 
 describe 'Add a date path', {:type => :feature} do
   it 'allows users to add a new date to the database' do
+    Tag.create(:name => 'Casual')
     visit '/'
     click_link 'Add a New Date'
     fill_in 'name', :with => 'Ikea'
@@ -9,6 +10,7 @@ describe 'Add a date path', {:type => :feature} do
     fill_in 'city', :with => 'Portland'
     fill_in 'state', :with => 'OR'
     fill_in 'description', :with => 'Eat meatballs and sit on couches!'
+    check 'Casual'
     click_button 'Add Date'
     expect(page).to have_content('Ikea')
   end

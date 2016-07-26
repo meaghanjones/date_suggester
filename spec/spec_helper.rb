@@ -16,5 +16,8 @@ RSpec.configure do |config|
     DateIdea.all().each() do |date|
       date.destroy()
     end
+    Tag.all().each() do |tag|
+      tag.destroy()
+    end
   end
 end
