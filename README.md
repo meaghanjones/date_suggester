@@ -1,4 +1,4 @@
-# :two_women_holding_hands::heart:G8Date:heart::couple::two_men_holding_hands:
+# :two_women_holding_hands::heart:GR8Date:heart::couple::two_men_holding_hands:
 
 ##### This application is  designed to allow a user to store, update, delete and view date ideas. The date ideas can be saved with the following information: name, address, description and rating. If the user wishes they can also tag the dates with categories and then view all the dates with the same categories.
 
@@ -39,4 +39,4 @@ Navigate to `localhost:4567` in browser.
 License
 -------
 This software is licensed under the MIT license.
-Copyright (c) 2016 **Alex Hagge, Halle Williams, Jake Richmond, Lauren Posey, Meaghan Jones, Stephanie Gurung**
+Copyright (c) 2016 **Alex Hagge, Erin Goncer, Halle Williams, Jake Richmond, Lauren Posey, Meaghan Jones, Stephanie Gurung**

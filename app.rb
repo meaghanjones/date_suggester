@@ -77,5 +77,16 @@ end
 
 post('/tags') do
   tag_name = params.fetch('tag_name')
-  
+  tag = Tag.create(:name => tag_name)
+  redirect('/tags')
+end
+
+get('/tags') do
+  @tags = Tag.all()
+  erb(:tags)
+end
+
+get('/tags/:id') do
+  @tag = Tag.find(params.fetch('id').to_i)
+  erb(:tag)
 end
