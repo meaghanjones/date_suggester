@@ -11,6 +11,7 @@ end
 
 get '/dates/new' do
   @date_idea = DateIdea.new
+  @tag = Tag.new
   @tags = Tag.all
   erb(:date_form)
 end
@@ -25,11 +26,9 @@ post '/dates' do
   address = "#{street}\n#{city},#{state}"
   rating = 0
   @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
-  if @date_idea.save
-   redirect('/dates/'.concat(@date_idea.id.to_s))
-  else
-   erb(:date_errors)
- end
+  @tags = Tag.all
+  @tag = Tag.new
+  erb(:date_form)
 end
 
 get '/dates/:id' do
@@ -80,8 +79,10 @@ end
 
 post '/tags' do
   tag_name = params.fetch('tag_name')
-  tag = Tag.create(:name => tag_name)
-  redirect back
+  @tag = Tag.create(:name => tag_name)
+  @tags = Tag.all
+  @date_idea = DateIdea.new
+  erb(:date_form)
 end
 
 get '/tags' do
