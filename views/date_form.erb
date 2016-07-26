@@ -1,7 +1,9 @@
-<h1>Add a New Date</h1>
-
+<div class="addNewDateTitle">
+  <h1>Add a New Date</h1>
+</div>
 
 <form action="/dates" method="post" class="form-container">
+
    <div class="form-group">
      <input type="text" name="name" id="name" placeholder="Name">
    </div>
@@ -18,7 +20,8 @@
      <textarea name="description" rows="8" placeholder="Description"></textarea>
    </div>
 
-   <button type="submit">Add Date</button>
+   <div class="dateButtons">
+     <button class="addDate" type="submit">Add Date</button>
+     <button class="viewDates"><a href="/dates">View All Dates</a></button>
+   </div>
  </form>
-
- <button><a href="/dates">View All Dates</a></button>

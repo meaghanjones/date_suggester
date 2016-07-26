@@ -1,25 +1,32 @@
-<h1>Update <%=@date_idea.name%> Information</h1>
-<form action="/dates/<%= @date_idea.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-    <label for="name">Name:</label>
-    <input type="text" name="name" value="<%= @date_idea.name %>">
+<div class="editdatepic">
+  <h1>Update <%=@date_idea.name%> Information</h1>
+</div>
 
-  <% if @date_idea.address.==("\n,") %>
-    <label for="address">Address:</label>
-    <textarea rows='3' name="address"></textarea>
+<div class="actionform">
 
-  <% else %>
-    <label for="address">Address:</label>
-    <textarea rows="3" name="address" id="address"><%= @date_idea.address %></textarea>
+  <form class="editform" action="/dates/<%= @date_idea.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
 
-  <% end %>
+      <input type="text" name="name" value="<%= @date_idea.name %>" placeholder="Name">
 
-  <label for="description">Description:</label>
-  <textarea rows="3" name="description" id="description"><%= @date_idea.description %></textarea>
+    <% if @date_idea.address.==("\n,") %>
 
-  <button type="submit">Edit Date</button>
-</form>
-<form action="/dates/<%= @date_idea.id %>" method="post">
-   <input type="hidden" name="_method" value="delete">
-   <button type="submit">Delete Date</button>
-</form>
+      <textarea rows='3' name="address" placeholder="Address"></textarea>
+
+    <% else %>
+
+      <textarea rows="3" name="address" id="address" placeholder="Address"><%= @date_idea.address %></textarea>
+
+    <% end %>
+
+    <textarea rows="8" name="description" id="description" placeholder="Description"><%= @date_idea.description %></textarea>
+
+    <button type="submit">Edit Date</button>
+  </form>
+
+  <form class="deleteform" action="/dates/<%= @date_idea.id %>" method="post">
+     <input type="hidden" name="_method" value="delete">
+     <button type="submit">Delete Date</button>
+  </form>
+
+</div>
