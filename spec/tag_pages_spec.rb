@@ -12,4 +12,11 @@ describe 'Add a tag path', {:type => :feature} do
     visit('/tags')
     expect(page).to have_content('Awesome')
   end
+  it 'allows users to view a list of dates for each tag' do
+    tag = Tag.create({:name => 'Awesome'})
+    tag.date_ideas.create({:name => 'County Fair'})
+    visit '/tags'
+    click_link 'Awesome'
+    expect(page).to have_content('County Fair')
+  end
  end
