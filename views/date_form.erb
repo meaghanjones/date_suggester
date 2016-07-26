@@ -1,22 +1,37 @@
 <h1>Add a New Date</h1>
 
 
-<form action="/dates" method="post" class="form-container">
-   <div class="form-group">
+<form action="/dates" method="post">
+   <div>
      <input type="text" name="name" id="name" placeholder="Name">
    </div>
-   <div class="form-group">
+   <div>
      <input type="text" name="street" id="street" placeholder="Street">
    </div>
-   <div class="form-group">
+   <div>
      <input type="text" name="city" id="city" placeholder="City">
    </div>
-   <div class="form-group">
+   <div>
      <input type="text" name="state" id="state" placeholder="State">
    </div>
-   <div class="form-group">
+   <div>
      <textarea name="description" rows="8" placeholder="Description"></textarea>
    </div>
+
+   <div>
+     <label for="tag_ids[]">Select categories this date belongs to:</label>
+      <% if @tags.any? %>
+        <% @tags.each do |tag| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="tag_ids[]" value="<%= tag.id %>"><%= tag.name %>
+          </label>
+        </div>
+        <% end %>
+      <% else %>
+      <p>Please add a new category on the <a href="/tags/new">add category page</a></p>
+      <% end %>
+    </div>
 
    <button type="submit">Add Date</button>
  </form>
