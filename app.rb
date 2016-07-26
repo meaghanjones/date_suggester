@@ -101,3 +101,9 @@ patch('/tags/:id') do
     erb(:tag_errors)
   end
 end
+
+delete ('/tags/:id/delete') do
+  @tag = Tag.find(params.fetch('id').to_i)
+  @tag.destroy
+  redirect('/tags')
+end
