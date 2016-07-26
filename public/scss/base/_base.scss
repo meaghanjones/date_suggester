@@ -62,3 +62,34 @@ body {
     transform: translateY(4px);
   }
 }
+
+@mixin kaboom {
+  @-webkit-keyframes hvr-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes hvr-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}
+
+@mixin buttonStyle {
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 7px solid $red;
+  background-color: brown;
+  box-shadow: 5px 5px 5px grey;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
