@@ -1,21 +1,21 @@
-require('bundler/setup')
+require 'bundler/setup'
 Bundler.require(:default)
 
-require('pry')
+require 'pry'
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-get('/') do
+get '/' do
   erb(:index)
 end
 
-get('/dates/new') do
+get '/dates/new' do
   @date_idea = DateIdea.new
   @tags = Tag.all
   erb(:date_form)
 end
 
-post('/dates') do
+post '/dates' do
   name = params.fetch('name')
   street = params[:street]
   city = params[:city]
@@ -32,22 +32,22 @@ post('/dates') do
  end
 end
 
-get('/dates/:id') do
+get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   erb(:date)
 end
 
-get('/dates') do
+get '/dates' do
   @date_ideas = DateIdea.order('rating  DESC')
   erb(:dates)
 end
 
-get('/dates/:id/edit') do
+get '/dates/:id/edit' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   erb(:date_edit)
 end
 
-patch('/dates/:id') do
+patch '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   name = params.fetch('name')
   address = params[:address]
@@ -60,40 +60,40 @@ patch('/dates/:id') do
   end
 end
 
-delete('/dates/:id') do
+delete '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @date_idea.destroy
   redirect('/dates')
 end
 
-post('/dates/:id/rating') do
+post '/dates/:id/rating' do
   date_idea = DateIdea.find(params.fetch('id').to_i)
   rating = params.fetch('rating').to_i
   date_idea.update({:rating => rating})
   redirect to("/dates/#{date_idea.id}")
 end
 
-get('/tags/new') do
+get '/tags/new' do
   erb(:tag_form)
 end
 
-post('/tags') do
+post '/tags' do
   tag_name = params.fetch('tag_name')
   tag = Tag.create(:name => tag_name)
   redirect('/tags')
 end
 
-get('/tags') do
+get '/tags' do
   @tags = Tag.all()
   erb(:tags)
 end
 
-get('/tags/:id') do
+get '/tags/:id' do
   @tag = Tag.find(params.fetch('id').to_i)
   erb(:tag)
 end
 
-patch('/tags/:id') do
+patch '/tags/:id' do
   @tag = Tag.find(params.fetch('id').to_i)
   name = params.fetch('tag_name')
   @tag.update({:name => name})
@@ -104,7 +104,7 @@ patch('/tags/:id') do
   end
 end
 
-delete ('/tags/:id/delete') do
+delete '/tags/:id/delete' do
   @tag = Tag.find(params.fetch('id').to_i)
   @tag.destroy
   redirect('/tags')
