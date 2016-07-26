@@ -37,3 +37,20 @@ $yellow: #fbf5a2;
 $pink: #ff9bfd;
 $darkpink: #fd9be0;
 $purple: #da98f0;
+
+//Mixin
+@mixin kaboom {
+  @-webkit-keyframes hvr-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes hvr-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}
