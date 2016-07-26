@@ -11,12 +11,9 @@
   height: 30%;
 
   button {
-    cursor: pointer;
     width: 170px;
     height: 125px;
-    border-radius: 20px;
-    border: 7px solid $red;
-    background: transparent;
+    @include buttonStyle($red);
 
     a {
       text-decoration: none;
