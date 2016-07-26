@@ -384,11 +384,12 @@ body {
 
 .container {
   margin: 0 auto;
+  padding: 0;
   box-shadow: inset 0 0 50px #ffe9f4;
   width: 100vw;
   max-width: 768px;
   height: 100vh;
-  background: white; }
+  background: #ededed; }
 
 .icon-container {
   display: flex;
@@ -401,12 +402,26 @@ body {
   width: 100%;
   height: 30%; }
   .button-container button {
-    cursor: pointer;
     width: 170px;
     height: 125px;
+    font-size: 25px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
     border-radius: 20px;
-    border: 7px solid #f37c94;
-    background: transparent; }
+    border: none;
+    background-color: #f37c94;
+    box-shadow: 0 9px #f05c79;
+    transition: background 0.2s ease; }
+    .button-container button a {
+      color: white;
+      text-decoration: none; }
+    .button-container button:hover {
+      background: #f4869c;
+      box-shadow: 0 9px #f37c94; }
+    .button-container button:active {
+      box-shadow: 0 5px #ee4466;
+      transform: translateY(4px); }
     .button-container button a {
       text-decoration: none; }
 
@@ -431,10 +446,170 @@ body {
       width: 90%;
       max-width: 500px;
       height: 60px;
-      border-radius: 10px; }
+      border-radius: 10px;
+      border: none; }
     .form-container .form-group textarea {
       width: 90%;
       max-width: 500px;
-      border-radius: 10px; }
+      border-radius: 10px;
+      border: none; }
+  .form-container .dateButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+    .form-container .dateButtons button {
+      width: 45%;
+      height: 100px;
+      font-size: 25px;
+      margin: 10px;
+      color: white;
+      cursor: pointer;
+      border-radius: 20px;
+      border: none;
+      background-color: #ffe9f4;
+      box-shadow: 0 9px #ffc5e2;
+      transition: background 0.2s ease; }
+      .form-container .dateButtons button a {
+        color: white;
+        text-decoration: none; }
+      .form-container .dateButtons button:hover {
+        background: #fff3f9;
+        box-shadow: 0 9px #ffe9f4; }
+      .form-container .dateButtons button:active {
+        box-shadow: 0 5px #ffabd5;
+        transform: translateY(4px); }
+      .form-container .dateButtons button a {
+        text-decoration: none; }
+
+.addNewDateTitle {
+  width: 100%;
+  height: 200px;
+  background: brown; }
+  .addNewDateTitle h1 {
+    color: white;
+    padding: 20px; }
+
+.errorpic {
+  width: 100%;
+  height: 200px;
+  background: #e60000; }
+
+h3 {
+  margin: 10px 0; }
+
+.errors {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .errors ul {
+    padding: 0; }
+    .errors ul li {
+      list-style: none;
+      color: red;
+      font-weight: bold; }
+
+button {
+  width: 45%;
+  height: 100px;
+  font-size: 25px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  background-color: #f37c94;
+  box-shadow: 0 9px #f05c79;
+  transition: background 0.2s ease; }
+  button a {
+    color: white;
+    text-decoration: none; }
+  button:hover {
+    background: #f4869c;
+    box-shadow: 0 9px #f37c94; }
+  button:active {
+    box-shadow: 0 5px #ee4466;
+    transform: translateY(4px); }
+
+.errorbuttons {
+  display: flex; }
+
+.editdatepic {
+  width: 100%;
+  height: 200px;
+  background: violet; }
+  .editdatepic h1 {
+    padding: 20px;
+    color: white; }
+
+.actionform .editform {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .actionform .editform input {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+    height: 60px;
+    align-self: center;
+    border-radius: 10px;
+    border: none; }
+  .actionform .editform textarea {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+    align-self: center;
+    border-radius: 10px;
+    border: none; }
+  .actionform .editform button {
+    align-self: center; }
+.actionform .deleteform {
+  display: flex;
+  justify-content: center; }
+
+.listdatespic {
+  width: 100%;
+  height: 200px;
+  background: steelblue; }
+  .listdatespic h1 {
+    padding: 20px;
+    color: white; }
+
+.datelist {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .datelist ul {
+    padding: 0; }
+    .datelist ul li {
+      text-align: center;
+      list-style: none;
+      font-size: 25px;
+      margin: 10px; }
+      .datelist ul li a {
+        text-decoration: none; }
+
+.listbuttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around; }
+  .listbuttons button {
+    font-size: 25px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background-color: pink;
+    box-shadow: 0 9px #ff9cae;
+    transition: background 0.2s ease; }
+    .listbuttons button a {
+      color: white;
+      text-decoration: none; }
+    .listbuttons button:hover {
+      background: #ffcad3;
+      box-shadow: 0 9px pink; }
+    .listbuttons button:active {
+      box-shadow: 0 5px #ff8398;
+      transform: translateY(4px); }
 
 /*# sourceMappingURL=app.css.map */

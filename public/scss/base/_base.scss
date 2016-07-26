@@ -25,10 +25,40 @@ body {
 
 .container {
   margin: 0 auto;
-
+  padding: 0;
   box-shadow: inset 0 0 50px $pink;
   width: 100vw;
   max-width: 768px;
   height: 100vh;
-  background: white;
+  background: lighten(lightgrey, 10%);
+}
+
+//Mixins and Extends
+@mixin buttonStyle($color) {
+  font-size: 25px;
+
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  background-color: $color;
+  box-shadow: 0 9px darken($color, 7%);
+
+  transition: background 0.2s ease;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: lighten($color, 2%);
+    box-shadow: 0 9px $color;
+  }
+
+  &:active {
+    box-shadow: 0 5px darken($color, 12%);
+    transform: translateY(4px);
+  }
 }
