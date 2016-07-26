@@ -90,3 +90,14 @@ get('/tags/:id') do
   @tag = Tag.find(params.fetch('id').to_i)
   erb(:tag)
 end
+
+patch('/tags/:id') do
+  @tag = Tag.find(params.fetch('id').to_i)
+  name = params.fetch('tag_name')
+  @tag.update({:name => name})
+  if @tag.save()
+    redirect('/tags/'.concat(@tag.id.to_s))
+  else
+    erb(:tag_errors)
+  end
+end
