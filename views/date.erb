@@ -37,6 +37,18 @@
   </li>
 </ul>
 
+<h3><strong>Categories:</strong></h3>
+<% if @date_idea.tags == [] %>
+<p>There are no categories yet! <a href="/tags/new">Add them here</a></p>
+<% else %>
+<ul>
+  <% @date_idea.tags.each do |tag| %>
+  <li><%= tag.name %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
 <button><a href='/dates'>View All Dates</a></button>
 <button><a href='/dates/new'>Add a New Date</a></button>
 <button><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
