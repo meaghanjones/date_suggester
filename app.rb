@@ -70,3 +70,12 @@ post('/dates/:id/rating') do
   date_idea.update({:rating => rating})
   redirect to("/dates/#{date_idea.id}")
 end
+
+get('/tags/new') do
+  erb(:tag_form)
+end
+
+post('/tags') do
+  tag_name = params.fetch('tag_name')
+  
+end

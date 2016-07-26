@@ -14,9 +14,9 @@ describe 'Add a date path', {:type => :feature} do
   end
 
   it('allows users to view a list of dates') do
-   DateIdea.create({:name => 'Ikea'})
+   DateIdea.create({:name => 'Ikea', :rating => 3})
    visit('/dates')
-   expect(page).to have_content('Ikea')
+   expect(page).to have_content('Dates')
  end
  end
 
