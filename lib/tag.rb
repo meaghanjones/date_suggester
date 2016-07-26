@@ -4,7 +4,7 @@ class Tag < ActiveRecord::Base
 
 private
 
-  define_method(:titlecase_tag_name) do
+  def titlecase_tag_name do
     self.name=(name.titlecase)
   end
 end
