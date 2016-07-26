@@ -1,5 +1,15 @@
 <h1><%= @tag.name %></h1>
 
+<% if @tag.date_ideas == []%>
+<p>There are no categories added to this date yet. Please add some below.</p>
+<% else %>
+<ul>
+  <% @tag.date_ideas.each do |date_idea|%>
+  <li><a href="/dates/<%= date_idea.id %>"><%= date_idea.name %></a></li>
+  <% end %>
+</ul>
+<% end %>
+
 <form action="/tags/<%= @tag.id%>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="tag_name">Rename this category</label>

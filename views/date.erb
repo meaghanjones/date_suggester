@@ -43,7 +43,7 @@
 <% else %>
 <ul>
   <% @date_idea.tags.each do |tag| %>
-  <li><%= tag.name %></li>
+  <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
   <% end %>
 </ul>
 <% end %>
