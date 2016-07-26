@@ -6,7 +6,7 @@ class CreateDates < ActiveRecord::Migration
       t.column(:description, :string)
       t.column(:rating, :integer)
 
-      t.timestamps()
+      t.timestamps
     end
   end
 end

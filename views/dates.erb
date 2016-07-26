@@ -8,7 +8,15 @@
   <% else %>
   <ul>
     <% @date_ideas.each() do |date_idea| %>
-    <li> <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a></li>
+    <li>
+      <span class = "fa <%= (date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+
+      <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a>
+    </li>
     <% end %>
   </ul>
   <% end %>
