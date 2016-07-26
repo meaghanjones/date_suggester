@@ -34,6 +34,7 @@ end
 
 get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
+  @tags = Tag.all - @date_idea.tags
   erb(:date)
 end
 
@@ -92,6 +93,25 @@ get '/tags/:id' do
   @tag = Tag.find(params.fetch('id').to_i)
   erb(:tag)
 end
+
+patch '/tags/:id/remove/:date_idea_id' do
+  id = params.fetch('id').to_i
+  tag = Tag.find(id)
+  date_idea_id = params.fetch('date_idea_id')
+  @date_idea = DateIdea.find(date_idea_id)
+  @date_idea.tags.destroy(tag)
+  redirect to("/dates/#{date_idea_id}")
+end
+
+patch '/tags/:id/add/:date_idea_id' do
+  id = params.fetch('id').to_i
+  tag = Tag.find(id)
+  date_idea_id = params.fetch('date_idea_id')
+  @date_idea = DateIdea.find(date_idea_id)
+  @date_idea.tags.push(tag)
+  redirect to("/dates/#{date_idea_id}")
+end
+
 
 patch '/tags/:id' do
   @tag = Tag.find(params.fetch('id').to_i)
