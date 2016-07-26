@@ -1,0 +1,81 @@
+.date-page {
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+
+.date-header {
+  height: 150px;
+  width: 100%;
+  background-color: teal;
+  margin-bottom: 20px;
+}
+
+.heart-rating {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  border: 0px;
+  background: transparent;
+  color: red;
+  &#heart1 {
+    color: #C98CB1;
+    font-size: 30px;
+  }
+  &#heart2 {
+    color: #CE6BA6;
+    font-size: 40px;
+  }
+  &#heart3 {
+    color: #D8459D;
+    font-size: 50px;
+  }
+  &#heart4 {
+    color: #D4268F;
+    font-size: 60px;
+  }
+
+  &#heart5 {
+    color: red;
+    font-size: 70px;
+    @include kaboom;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    &:hover,
+    &:focus,
+    &:checked,
+    &:active {
+      color:red;
+      -webkit-animation-name: hvr-pulse-grow;
+      animation-name: hvr-pulse-grow;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+    }
+ }
+}
+
+.big-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .big-button {
+
+    width: 30%;
+    height: 100px;
+  }
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
