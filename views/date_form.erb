@@ -3,6 +3,7 @@
 </div>
 <h4>Add categories to help organize your dates!</h4>
 <div>
+  <%= erb(:errors, :locals => { :object => @tag }) %>
   <form action="/tags" method="post">
     <input type="text" name="tag_name" id="tag_name">
     <button type="submit">Add Category</button>
@@ -24,6 +25,7 @@
 </div>
 
 <div>
+  <%= erb(:errors, :locals => { :object => @date_idea }) %>
   <form action="/dates" method="post" class="form-container">
 
     <div class="form-group">
