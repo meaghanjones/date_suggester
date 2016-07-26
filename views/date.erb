@@ -1,22 +1,27 @@
+<div class="date-page">
+<div class="date-header">
+
+
 <h1><%= @date_idea.name %></h1>
+</div>
 <form action="/dates/<%= @date_idea.id %>/rating"  method="post">
-  <button value=1 name="rating">
+  <button id="heart1" class="heart-rating" value=1 name="rating">
     <span class = "fa <%= (@date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
   </button>
 
-  <button value=2 name="rating">
+  <button id="heart2" class="heart-rating" value=2 name="rating">
     <span class = "fa <%= (@date_idea.rating().<(2))? 'fa-heart-o':'fa-heart' %>"></span>
   </button>
 
-  <button value=3 name="rating">
+  <button id="heart3" class="heart-rating" value=3 name="rating">
     <span class = "fa <%= (@date_idea.rating().<(3))? 'fa-heart-o':'fa-heart' %>"></span>
   </button>
 
-  <button value=4 name="rating">
+  <button id="heart4" class="heart-rating" value=4 name="rating">
     <span class = "fa <%= (@date_idea.rating().<(4))? 'fa-heart-o':'fa-heart' %>"></span>
   </button>
 
-  <button value=5 name="rating">
+  <button id="heart5"  class="heart-rating animation-heart" value=5 name="rating">
     <span class = "fa <%= (@date_idea.rating().<(5))? 'fa-heart-o':'fa-heart' %>"></span>
   </button>
 </form>
@@ -36,7 +41,11 @@
     <% end %>
   </li>
 </ul>
-
+<div class="big-button-container">
+  <button class="big-button"><a href='/dates'>View All Dates</a></button>
+  <button class="big-button"><a href='/dates/new'>Add a New Date</a></button>
+  <button class="big-button"><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
+</div>
 <h3><strong>Categories:</strong></h3>
 <% if @date_idea.tags == [] %>
 <p>There are no categories for this date yet, add them below!</p>

@@ -9,10 +9,6 @@ html {
   box-sizing: inherit;
   }
 
-//Mixins
-$pink: lighten(hotpink, 25%);
-$red: lighten(crimson, 25%);
-
 * {
   font-family: sans-serif;
 }
@@ -27,16 +23,14 @@ body {
   opacity: 0.85;
   margin: 0 auto;
   padding: 0;
-  box-shadow: inset 0 0 50px $pink;
+
   width: 100vw;
   max-width: 768px;
   height: 100vh;
   background: lighten(lightgrey, 12%);
-  // display: flex;
 }
 
 //Variables
-
 $blue: #87ecd5;
 $green: #b4ea89;
 $yellow: #fbf5a2;
