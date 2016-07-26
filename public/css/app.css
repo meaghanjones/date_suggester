@@ -383,13 +383,37 @@ body {
   background-size: cover; }
 
 .container {
+  opacity: 0.85;
   margin: 0 auto;
   padding: 0;
   box-shadow: inset 0 0 50px #ffe9f4;
   width: 100vw;
   max-width: 768px;
   height: 100vh;
-  background: #ededed; }
+  background: #f2f2f2; }
+
+#logo {
+  margin: 5px;
+  width: auto;
+  height: 100px; }
+
+.navbar {
+  display: flex;
+  flex-direction: column; }
+  .navbar .navbuttons {
+    display: flex; }
+    .navbar .navbuttons button {
+      border: none;
+      opacity: 0.75; }
+      .navbar .navbuttons button a {
+        text-decoration: none;
+        font-size: 20px; }
+    .navbar .navbuttons #dates {
+      background: #ff9bfd; }
+    .navbar .navbuttons #newdates {
+      background: #fbf5a2; }
+    .navbar .navbuttons #cats {
+      background: #b4ea89; }
 
 .icon-container {
   display: flex;
@@ -403,25 +427,7 @@ body {
   height: 30%; }
   .button-container button {
     width: 170px;
-    height: 125px;
-    font-size: 25px;
-    margin: 10px;
-    color: white;
-    cursor: pointer;
-    border-radius: 20px;
-    border: none;
-    background-color: #f37c94;
-    box-shadow: 0 9px #f05c79;
-    transition: background 0.2s ease; }
-    .button-container button a {
-      color: white;
-      text-decoration: none; }
-    .button-container button:hover {
-      background: #f4869c;
-      box-shadow: 0 9px #f37c94; }
-    .button-container button:active {
-      box-shadow: 0 5px #ee4466;
-      transform: translateY(4px); }
+    height: 125px; }
     .button-container button a {
       text-decoration: none; }
 
@@ -459,25 +465,7 @@ body {
     justify-content: space-around; }
     .form-container .dateButtons button {
       width: 45%;
-      height: 100px;
-      font-size: 25px;
-      margin: 10px;
-      color: white;
-      cursor: pointer;
-      border-radius: 20px;
-      border: none;
-      background-color: #ffe9f4;
-      box-shadow: 0 9px #ffc5e2;
-      transition: background 0.2s ease; }
-      .form-container .dateButtons button a {
-        color: white;
-        text-decoration: none; }
-      .form-container .dateButtons button:hover {
-        background: #fff3f9;
-        box-shadow: 0 9px #ffe9f4; }
-      .form-container .dateButtons button:active {
-        box-shadow: 0 5px #ffabd5;
-        transform: translateY(4px); }
+      height: 100px; }
       .form-container .dateButtons button a {
         text-decoration: none; }
 
@@ -510,25 +498,7 @@ h3 {
 
 button {
   width: 45%;
-  height: 100px;
-  font-size: 25px;
-  margin: 10px;
-  color: white;
-  cursor: pointer;
-  border-radius: 20px;
-  border: none;
-  background-color: #f37c94;
-  box-shadow: 0 9px #f05c79;
-  transition: background 0.2s ease; }
-  button a {
-    color: white;
-    text-decoration: none; }
-  button:hover {
-    background: #f4869c;
-    box-shadow: 0 9px #f37c94; }
-  button:active {
-    box-shadow: 0 5px #ee4466;
-    transform: translateY(4px); }
+  height: 100px; }
 
 .errorbuttons {
   display: flex; }
@@ -592,24 +562,5 @@ button {
   width: 100%;
   display: flex;
   justify-content: space-around; }
-  .listbuttons button {
-    font-size: 25px;
-    margin: 10px;
-    color: white;
-    cursor: pointer;
-    border-radius: 20px;
-    border: none;
-    background-color: pink;
-    box-shadow: 0 9px #ff9cae;
-    transition: background 0.2s ease; }
-    .listbuttons button a {
-      color: white;
-      text-decoration: none; }
-    .listbuttons button:hover {
-      background: #ffcad3;
-      box-shadow: 0 9px pink; }
-    .listbuttons button:active {
-      box-shadow: 0 5px #ff8398;
-      transform: translateY(4px); }
 
 /*# sourceMappingURL=app.css.map */
