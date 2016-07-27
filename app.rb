@@ -94,13 +94,16 @@ post '/tags/onpage' do
   tag_name = params.fetch('tag_name')
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
-  @date_idea = DateIdea.new
-  redirect to('/tags')
+  if @tag.save
+    redirect('/tags')
+  else
+    erb(:_errors)
+  end
 end
 
 get '/tags' do
   @tags = Tag.all()
-
+  @tag = Tag.new
   erb(:tags)
 end
 
@@ -170,7 +173,7 @@ patch '/datelogs/:id' do
   if @datelog.save()
     redirect('/datelogs/'.concat(@datelog.id.to_s))
   else
-    erb(:date_errors)
+    erb(:date_log)
   end
 end
 

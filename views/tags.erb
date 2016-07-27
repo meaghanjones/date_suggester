@@ -1,7 +1,10 @@
 <h1>Categories</h1>
 <% if @tags == [] %>
 <p>There are no categories saved in the database yet.</p>
+<<<<<<< HEAD
+=======
 <a href="/dates/new">Add a New Category</a>
+>>>>>>> master
 <% else %>
 <ul>
   <% @tags.each do |tag| %>
@@ -11,6 +14,7 @@
 <% end %>
 
 <h4>Add categories to help organize your dates!</h4>
+<%= erb(:errors, :locals => { :object => @tag }) %>
 <div>
 
   <form action="/tags/onpage" method="post">
