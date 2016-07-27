@@ -10,8 +10,8 @@
   </form>
 </div>
 <div>
-  <label for="tag_ids[]"><strong>Select categories this date belongs to:</strong></label>
   <% if @tags.any? %>
+  <label for="tag_ids[]"><strong>Select categories this date belongs to:</strong></label>
     <% @tags.each do |tag| %>
     <div class="checkbox">
       <label>
@@ -20,7 +20,6 @@
     </div>
     <% end %>
   <% else %>
-  <p>Please add a new category above</p>
   <% end %>
 </div>
 

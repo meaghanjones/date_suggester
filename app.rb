@@ -31,6 +31,11 @@ post '/dates' do
   erb(:date_form)
 end
 
+get '/dates/random' do
+  date_idea = DateIdea.order_by_rand.first
+  redirect('/dates/'.concat(date_idea.id.to_s))
+end
+
 get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @tags = Tag.all - @date_idea.tags
