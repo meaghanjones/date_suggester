@@ -1,0 +1,32 @@
+.catcontainer {
+  display: flex;
+  flex-direction: column;
+  background: dimgrey;
+  padding: 20px;
+
+  .cat-content {
+    align-self: center;
+
+    ul {
+      padding: 0;
+
+      li {
+        margin-top: 10px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+
+          &:hover {
+            color: $pink;
+          }
+        }
+      }
+    }
+
+    .morecats {
+      @include catform;
+    }
+  }
+}

@@ -500,6 +500,79 @@ li {
   text-decoration: none;
   list-style: none; }
 
+.newdatecontainer {
+  display: flex;
+  flex-direction: column;
+  background: dimgrey;
+  padding: 20px; }
+  .newdatecontainer .formcontent {
+    align-self: center; }
+
+.dateform {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 500px;
+  height: auto; }
+  .dateform input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 2px; }
+  .dateform textarea {
+    width: 100%; }
+  .dateform .addDate {
+    background: #b4ea89;
+    border: none;
+    width: 200px;
+    height: 40px; }
+
+.addcatform {
+  display: flex; }
+  .addcatform input {
+    width: 200px;
+    height: 40px; }
+  .addcatform button {
+    background: #87ecd5;
+    border: none;
+    width: 200px;
+    height: 40px; }
+
+.catlist .checkbox input {
+  margin: 20px; }
+.catlist .checkbox label {
+  font-size: 25px; }
+
+.selectcats {
+  line-height: 50px; }
+
+.catcontainer {
+  display: flex;
+  flex-direction: column;
+  background: dimgrey;
+  padding: 20px; }
+  .catcontainer .cat-content {
+    align-self: center; }
+    .catcontainer .cat-content ul {
+      padding: 0; }
+      .catcontainer .cat-content ul li {
+        margin-top: 10px; }
+        .catcontainer .cat-content ul li a {
+          text-decoration: none;
+          color: white;
+          font-size: 20px; }
+          .catcontainer .cat-content ul li a:hover {
+            color: #ff9bfd; }
+    .catcontainer .cat-content .morecats {
+      display: flex; }
+      .catcontainer .cat-content .morecats input {
+        width: 200px;
+        height: 40px; }
+      .catcontainer .cat-content .morecats button {
+        background: #87ecd5;
+        border: none;
+        width: 200px;
+        height: 40px; }
+
 body {
   background: url("http://lifenaples.com/wp-content/uploads/2016/01/Couples-Date-Night2.jpg") no-repeat top center;
   background-size: cover;
