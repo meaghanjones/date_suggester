@@ -175,3 +175,7 @@ delete '/datelogs/:date_idea_id/:id' do
   date_idea = DateIdea.find(params.fetch('date_idea_id').to_i)
   redirect('/dates/'.concat(date_idea.id.to_s))
 end
+
+post '/dates/search' do
+
+end
