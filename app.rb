@@ -56,7 +56,7 @@ patch '/dates/:id' do
   if @date_idea.save()
     redirect('/dates/'.concat(@date_idea.id.to_s))
   else
-    erb(:date_errors)
+    redirect("/dates/#{@date_idea.id}/edit")
   end
 end
 
@@ -85,8 +85,17 @@ post '/tags' do
   erb(:date_form)
 end
 
+post '/tags/onpage' do
+  tag_name = params.fetch('tag_name')
+  @tag = Tag.create(:name => tag_name)
+  @tags = Tag.all
+  @date_idea = DateIdea.new
+  redirect to('/tags')
+end
+
 get '/tags' do
   @tags = Tag.all()
+
   erb(:tags)
 end
 
@@ -118,11 +127,7 @@ patch '/tags/:id' do
   @tag = Tag.find(params.fetch('id').to_i)
   name = params.fetch('tag_name')
   @tag.update({:name => name})
-  if @tag.save()
-    redirect('/tags/'.concat(@tag.id.to_s))
-  else
-    erb(:tag_errors)
-  end
+  redirect('/tags/'.concat(@tag.id.to_s))
 end
 
 delete '/tags/:id/delete' do
