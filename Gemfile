@@ -5,6 +5,7 @@ gem 'sinatra-activerecord'
 gem 'rake'
 gem 'pg'
 gem 'sinatra'
+gem 'randumb'
 
 group(:test) do
   gem 'rspec'
