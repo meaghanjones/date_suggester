@@ -14,6 +14,10 @@ Begin the installation by cloning the repository from github.
 ```
 $ git clone https://github.com/meaghanjones/date_suggester.git
 ```
+Install bundler
+```
+$ gem install bundler
+```
 
 Install required gems in the local repository:
 ```
