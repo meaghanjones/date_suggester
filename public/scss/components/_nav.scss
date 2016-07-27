@@ -1,23 +1,26 @@
 #logo {
   margin: 5px;
   width: auto;
-  height: 90%;
+  height: 100px;
 }
 
 .navbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
 
   .navbuttons {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
 
-    #home,
     #dates,
     #newdates,
     #cats {
-      width: 25%;
-      height: 100px;
+      width: 200px;
+      height: 50px;
       border: none;
 
       a{
@@ -36,7 +39,7 @@
       background: $green;
     }
     #home {
-      background: white;
+      background: fff;
       min-width: 240px;
     }
 

@@ -377,11 +377,6 @@ html {
 * {
   font-family: sans-serif; }
 
-body {
-  background-image: url("http://www.oceanviolet.com/wp-content/uploads/2014/09/blurred-new-york-city-skyline.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; }
-
 .container {
   opacity: 0.85;
   margin: 0 auto;
@@ -392,22 +387,24 @@ body {
 #logo {
   margin: 5px;
   width: auto;
-  height: 90%; }
+  height: 100px; }
 
 .navbar {
   display: flex;
-  flex-direction: column; }
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto; }
   .navbar .navbuttons {
     display: flex;
-    flex-direction: row; }
-    .navbar .navbuttons #home,
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto; }
     .navbar .navbuttons #dates,
     .navbar .navbuttons #newdates,
     .navbar .navbuttons #cats {
-      width: 25%;
-      height: 100px;
+      width: 200px;
+      height: 50px;
       border: none; }
-      .navbar .navbuttons #home a,
       .navbar .navbuttons #dates a,
       .navbar .navbuttons #newdates a,
       .navbar .navbuttons #cats a {
@@ -420,7 +417,7 @@ body {
     .navbar .navbuttons #cats {
       background: #b4ea89; }
     .navbar .navbuttons #home {
-      background: white;
+      background: fff;
       min-width: 240px; }
     @media only screen and (max-width: 500px) {
       .navbar .navbuttons {
@@ -502,5 +499,13 @@ body {
 li {
   text-decoration: none;
   list-style: none; }
+
+body {
+  background: url("http://lifenaples.com/wp-content/uploads/2016/01/Couples-Date-Night2.jpg") no-repeat top center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  overflow: hidden; }
 
 /*# sourceMappingURL=app.css.map */
