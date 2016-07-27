@@ -130,3 +130,13 @@ delete '/tags/:id/delete' do
   @tag.destroy
   redirect('/tags')
 end
+
+post '/datelogs/:date_idea_id' do
+  rendezvous_time = params.fetch('rendezvous_time')
+  romantic_interest = params[:romantic_interest]
+  notes = params[:notes]
+  date_idea_id = params.fetch('date_idea_id')
+  date_idea = DateIdea.find(date_idea_id)
+  date_idea.datelogs.create({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
+  redirect back
+end

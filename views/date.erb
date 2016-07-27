@@ -41,11 +41,6 @@
     <% end %>
   </li>
 </ul>
-<div class="big-button-container">
-  <button class="big-button"><a href='/dates'>View All Dates</a></button>
-  <button class="big-button"><a href='/dates/new'>Add a New Date</a></button>
-  <button class="big-button"><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
-</div>
 <h3><strong>Categories:</strong></h3>
 <% if @date_idea.tags == [] %>
 <p>There are no categories for this date yet, add them below!</p>
@@ -82,3 +77,24 @@
 <% end %>
 
 <button><a href='/dates/<%= @date_idea.id %>/edit'>Edit Your Date</a></button>
+
+<% if @date_idea.datelogs == [] %>
+<p>There are no date logs yet. Log your date below!</p>
+<% else %>
+<h3>Date Log</h3>
+<ul>
+  <% @date_idea.datelogs.each do |datelog| %>
+  <li><a href = "/datelogs/<%= datelog.id %>"><%= datelog.rendezvous_time %>: <%= datelog.romantic_interest %></a></li>
+  <% end %>
+</ul>
+<% end %>
+<h1>Enter a New Date Log:</h1>
+<form action="/datelogs/<%= @date_idea.id %>" method="post">
+  <label for="rendezvous_time">When did you go on your date?</label>
+  <input type="date" name="rendezvous_time" id="rendezvous_time">
+  <label for="romantic_interest">Please enter any persons you went on the date with:</label>
+  <input type="text" name="romantic_interest" id="romantic_interest">
+  <label for="notes">Add notes here:</label>
+  <input type="text" name="notes" id="notes">
+  <button type="submit">Log Date</button>
+</form>
