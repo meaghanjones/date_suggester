@@ -42,8 +42,6 @@
   </li>
 </ul>
 <div class="big-button-container">
-  <button class="big-button"><a href='/dates'>View All Dates</a></button>
-  <button class="big-button"><a href='/dates/new'>Add a New Date</a></button>
   <button class="big-button"><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
 </div>
 <h3><strong>Categories:</strong></h3>
@@ -64,7 +62,7 @@
 <% end %>
 
 
-<h3><strong>Add Catagories to this date</strong></h3>
+<h3><strong>Add Categories to this date</strong></h3>
 <% if @tags == [] %>
 <p>There are no categories to save to the date. <a href="/tags/new">Add a New Category</a></p>
 <% else %>
