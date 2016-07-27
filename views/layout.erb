@@ -14,6 +14,12 @@
           <button id="dates"><a href='/dates'>Dates</a></button>
           <button id="newdates"><a href='/dates/new'>New Date</a></button>
           <button id="cats"><a href='/tags'>Categories</a></button>
+          <div class="search-bar">
+            <form action="/dates/search" method="post">
+              <input type="text" name="date_idea_search">
+              <button type="submit" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+          </div>
         </div>
       </div>
 
