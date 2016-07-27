@@ -28,7 +28,12 @@ post '/dates' do
   @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
   @tags = Tag.all
   @tag = Tag.new
-  erb(:date_form)
+  redirect to "/dates"
+end
+
+get '/dates/random' do
+  date_idea = DateIdea.order_by_rand.first
+  redirect('/dates/'.concat(date_idea.id.to_s))
 end
 
 get '/dates/:id' do

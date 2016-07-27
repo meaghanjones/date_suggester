@@ -50,6 +50,10 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (11.2.2)
+    randumb (0.5.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      rake
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -94,6 +98,7 @@ DEPENDENCIES
   pg
   pry
   rake
+  randumb
   rspec
   sinatra
   sinatra-activerecord
