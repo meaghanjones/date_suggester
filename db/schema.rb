@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726153425) do
+ActiveRecord::Schema.define(version: 20160727151910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20160726153425) do
     t.datetime "updated_at"
     t.index ["date_idea_id"], name: "index_date_ideas_tags_on_date_idea_id", using: :btree
     t.index ["tag_id"], name: "index_date_ideas_tags_on_tag_id", using: :btree
+  end
+
+  create_table "datelogs", force: :cascade do |t|
+    t.string   "romantic_interest"
+    t.datetime "rendezvous_time"
+    t.string   "notes"
+    t.integer  "date_idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", force: :cascade do |t|
