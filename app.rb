@@ -163,3 +163,10 @@ patch '/datelogs/:id' do
     erb(:date_errors)
   end
 end
+
+delete '/datelogs/:date_idea_id/:id' do
+  @datelog = Datelog.find(params.fetch('id').to_i)
+  @datelog.destroy
+  date_idea = DateIdea.find(params.fetch('date_idea_id').to_i)
+  redirect('/dates/'.concat(date_idea.id.to_s))
+end
