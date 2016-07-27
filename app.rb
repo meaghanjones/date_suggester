@@ -87,7 +87,7 @@ post '/tags' do
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
   @date_idea = DateIdea.new
-  erb(:date_form)
+  redirect('/dates/new')
 end
 
 post '/tags/onpage' do
