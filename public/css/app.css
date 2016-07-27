@@ -369,20 +369,8 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit; }
-
 * {
   font-family: sans-serif; }
-
-.container {
-  opacity: 0.85;
-  margin: 0 auto;
-  padding: 0;
-  width: 100vw;
-  height: 100vh; }
 
 #logo {
   margin: 5px;
@@ -393,12 +381,14 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: auto; }
+  width: 100vw;
+  z-index: 1000; }
   .navbar .navbuttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: auto; }
+    width: auto;
+    margin-right: 0; }
     .navbar .navbuttons #dates,
     .navbar .navbuttons #newdates,
     .navbar .navbuttons #cats {
@@ -448,16 +438,116 @@ html {
   color: red; }
   .heart-rating#heart1 {
     color: #C98CB1;
-    font-size: 30px; }
+    font-size: 30px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale; }
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+    .heart-rating#heart1:hover, .heart-rating#heart1:focus, .heart-rating#heart1:checked, .heart-rating#heart1:active {
+      -webkit-animation-name: hvr-pulse-grow;
+      animation-name: hvr-pulse-grow;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
   .heart-rating#heart2 {
     color: #CE6BA6;
-    font-size: 40px; }
+    font-size: 40px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale; }
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+    .heart-rating#heart2:hover, .heart-rating#heart2:focus, .heart-rating#heart2:checked, .heart-rating#heart2:active {
+      -webkit-animation-name: hvr-pulse-grow;
+      animation-name: hvr-pulse-grow;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
   .heart-rating#heart3 {
     color: #D8459D;
-    font-size: 50px; }
+    font-size: 50px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale; }
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+    .heart-rating#heart3:hover, .heart-rating#heart3:focus, .heart-rating#heart3:checked, .heart-rating#heart3:active {
+      -webkit-animation-name: hvr-pulse-grow;
+      animation-name: hvr-pulse-grow;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
   .heart-rating#heart4 {
     color: #D4268F;
-    font-size: 60px; }
+    font-size: 60px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale; }
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+    .heart-rating#heart4:hover, .heart-rating#heart4:focus, .heart-rating#heart4:checked, .heart-rating#heart4:active {
+      -webkit-animation-name: hvr-pulse-grow;
+      animation-name: hvr-pulse-grow;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
   .heart-rating#heart5 {
     color: red;
     font-size: 70px;
@@ -500,6 +590,10 @@ li {
   text-decoration: none;
   list-style: none; }
 
+<<<<<<< HEAD
+.hero {
+  background: url("../img/Couples-Date-Night2.jpg") no-repeat top center;
+=======
 .newdatecontainer {
   display: flex;
   flex-direction: column;
@@ -575,10 +669,15 @@ li {
 
 body {
   background: url("http://lifenaples.com/wp-content/uploads/2016/01/Couples-Date-Night2.jpg") no-repeat top center;
+>>>>>>> master
   background-size: cover;
   width: 100%;
   height: 100vh;
   color: white;
-  overflow: hidden; }
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000; }
 
 /*# sourceMappingURL=app.css.map */

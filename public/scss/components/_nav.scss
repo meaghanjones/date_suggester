@@ -8,13 +8,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: auto;
+  width: 100vw;
+  z-index: 1000;
 
   .navbuttons {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: auto;
+    margin-right: 0;
 
     #dates,
     #newdates,
