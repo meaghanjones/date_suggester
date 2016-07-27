@@ -19,5 +19,8 @@ RSpec.configure do |config|
     Tag.all().each() do |tag|
       tag.destroy()
     end
+    Datelog.all().each() do |datelog|
+      datelog.destroy()
+    end
   end
 end

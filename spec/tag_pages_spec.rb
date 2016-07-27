@@ -2,7 +2,7 @@ require('spec_helper')
 
 describe 'Add a tag path', {:type => :feature} do
   it 'allows users to add a new tag to the database' do
-    visit '/tags/new'
+    visit '/dates/new'
     fill_in 'tag_name', :with => 'Awesome'
     click_button 'Add Category'
     expect(page).to have_content('Awesome')

@@ -4,7 +4,7 @@ describe 'Add a date path', {:type => :feature} do
   it 'allows users to add a new date to the database' do
     Tag.create(:name => 'Casual')
     visit '/'
-    click_link 'Add a New Date'
+    click_link 'New Date'
     fill_in 'name', :with => 'Ikea'
     fill_in 'street', :with => '10280 NE Cascades Parkway'
     fill_in 'city', :with => 'Portland'
