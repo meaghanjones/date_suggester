@@ -1,0 +1,16 @@
+<h1><%= @datelog.rendezvous_time %></h1>
+
+<ul>
+  <li>Date Companion(s): <% if @datelog.romantic_interest.!=('') %>
+  <%= @datelog.romantic_interest %>
+  <% else %>
+  no persons listed
+  <% end %></li>
+  <li>Notes: <% if @datelog.notes.!=('') %>
+  <%= @datelog.notes %>
+  <% else %>
+  no notes listed
+  <% end %></li>
+</ul>
+
+<button type="button"><a href="/datelogs/<%= @datelog.id %>/edit">Edit Date Log</button>

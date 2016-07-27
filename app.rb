@@ -140,3 +140,26 @@ post '/datelogs/:date_idea_id' do
   date_idea.datelogs.create({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
   redirect back
 end
+
+get '/datelogs/:id' do
+  @datelog = Datelog.find(params.fetch('id').to_i)
+  erb(:datelog)
+end
+
+get '/datelogs/:id/edit' do
+  @datelog = Datelog.find(params.fetch('id').to_i)
+  erb(:datelog_edit)
+end
+
+patch '/datelogs/:id' do
+  @datelog = Datelog.find(params.fetch('id').to_i)
+  rendezvous_time = params.fetch('rendezvous_time')
+  romantic_interest = params[:romantic_interest]
+  notes = params[:notes]
+  @datelog.update({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
+  if @datelog.save()
+    redirect('/datelogs/'.concat(@datelog.id.to_s))
+  else
+    erb(:date_errors)
+  end
+end
