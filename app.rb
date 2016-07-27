@@ -28,7 +28,12 @@ post '/dates' do
   @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
   @tags = Tag.all
   @tag = Tag.new
-  erb(:date_form)
+  redirect to "/dates"
+end
+
+get '/dates/random' do
+  date_idea = DateIdea.order_by_rand.first
+  redirect('/dates/'.concat(date_idea.id.to_s))
 end
 
 get '/dates/:id' do
@@ -82,20 +87,23 @@ post '/tags' do
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
   @date_idea = DateIdea.new
-  erb(:date_form)
+  redirect('/dates/new')
 end
 
 post '/tags/onpage' do
   tag_name = params.fetch('tag_name')
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
-  @date_idea = DateIdea.new
-  redirect to('/tags')
+  if @tag.save
+    redirect('/tags')
+  else
+    erb(:_errors)
+  end
 end
 
 get '/tags' do
   @tags = Tag.all()
-
+  @tag = Tag.new
   erb(:tags)
 end
 
@@ -165,7 +173,7 @@ patch '/datelogs/:id' do
   if @datelog.save()
     redirect('/datelogs/'.concat(@datelog.id.to_s))
   else
-    erb(:date_errors)
+    erb(:date_log)
   end
 end
 
@@ -177,5 +185,11 @@ delete '/datelogs/:date_idea_id/:id' do
 end
 
 post '/dates/search' do
-
+  date_idea_search = params.fetch('date_idea_search').titlecase
+  @search_results = DateIdea.where("name LIKE ?", "%#{date_idea_search}%")
+  if @search_results.!=([])
+    erb(:search_results)
+  else
+    erb(:no_result)
+  end
 end

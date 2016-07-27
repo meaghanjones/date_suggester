@@ -1,0 +1,37 @@
+//Styling
+
+.newdatecontainer {
+  display: flex;
+  flex-direction: column;
+  background: dimgrey;
+  padding: 20px;
+
+  .formcontent {
+    align-self: center;
+  }
+}
+
+.dateform {
+  @include forms(500px)
+}
+
+.addcatform {
+  @include catform;
+}
+
+.catlist {
+  .checkbox {
+    input {
+      margin: 20px;
+
+
+    }
+    label {
+      font-size: 25px;
+    }
+  }
+}
+
+.selectcats {
+  line-height: 50px;
+}
