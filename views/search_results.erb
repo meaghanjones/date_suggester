@@ -1,0 +1,6 @@
+<h1>Search Results:</h1>
+<ul>
+  <% @search_results.each do |result| %>
+  <li><a href="/dates/<%= result.id %>"><%= result.name %></a></li>
+  <% end %>
+</ul>

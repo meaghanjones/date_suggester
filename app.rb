@@ -177,5 +177,11 @@ delete '/datelogs/:date_idea_id/:id' do
 end
 
 post '/dates/search' do
-
+  date_idea_search = params.fetch('date_idea_search').titlecase
+  @search_results = DateIdea.where("name LIKE ?", "%#{date_idea_search}%")
+  if @search_results.!=([])
+    erb(:search_results)
+  else
+    erb(:no_result)
+  end
 end
