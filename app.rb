@@ -85,8 +85,17 @@ post '/tags' do
   erb(:date_form)
 end
 
+post '/tags/onpage' do
+  tag_name = params.fetch('tag_name')
+  @tag = Tag.create(:name => tag_name)
+  @tags = Tag.all
+  @date_idea = DateIdea.new
+  redirect to('/tags')
+end
+
 get '/tags' do
   @tags = Tag.all()
+
   erb(:tags)
 end
 
