@@ -56,7 +56,7 @@ patch '/dates/:id' do
   if @date_idea.save()
     redirect('/dates/'.concat(@date_idea.id.to_s))
   else
-    erb(:date_errors)
+    redirect("/dates/#{@date_idea.id}/edit")
   end
 end
 
