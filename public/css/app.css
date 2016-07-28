@@ -458,6 +458,8 @@ strong {
   padding-bottom: 20px; }
   .searchdiv .searchresultlist {
     padding: 0; }
+    .searchdiv .searchresultlist span {
+      padding-right: 5px; }
     .searchdiv .searchresultlist li {
       padding-top: 30px; }
       .searchdiv .searchresultlist li a {

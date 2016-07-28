@@ -1,10 +1,18 @@
 <div class="searchdiv">
 
-  <h1>Search Results:</h1>
-  <ul class="searchresultlist">
-    <% @search_results.each do |result| %>
-    <li><a href="/dates/<%= result.id %>"><%= result.name %></a></li>
-    <% end %>
-  </ul>
+<h1>Search Results:</h1>
+<ul class="searchresultlist">
+  <% @search_results.each do |result| %>
+  <li>
+    <span class = "fa <%= (result.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
+    <span class = "fa <%= (result.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
+    <span class = "fa <%= (result.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
+    <span class = "fa <%= (result.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
+    <span class = "fa <%= (result.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+
+    <a href="/dates/<%= result.id %>"><%= result.name %></a>
+  </li>
+  <% end %>
+</ul>
 
 </div>

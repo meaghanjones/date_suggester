@@ -213,7 +213,17 @@ end
 
 post '/dates/search' do
   date_idea_search = params.fetch('date_idea_search').titlecase
-  @search_results = DateIdea.where("name LIKE ?", "%#{date_idea_search}%")
+  @search_results = []
+  date_search_results = DateIdea.where("name LIKE ?", "%#{date_idea_search}%")
+  tag_search_results = Tag.where("name LIKE ?", "%#{date_idea_search}%")
+  tag_search_results.each do |tag|
+    tag.date_ideas.each() do |idea|
+      @search_results.push(idea)
+    end
+  end
+  date_search_results.each do |date|
+    @search_results.push(date)
+  end
   if @search_results.!=([])
     erb(:search_results)
   else
