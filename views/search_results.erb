@@ -1,5 +1,7 @@
+<div class="searchdiv">
+
 <h1>Search Results:</h1>
-<ul>
+<ul class="searchresultlist">
   <% @search_results.each do |result| %>
   <li>
     <span class = "fa <%= (result.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
@@ -12,3 +14,5 @@
   </li>
   <% end %>
 </ul>
+
+</div>

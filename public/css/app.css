@@ -450,6 +450,28 @@ strong {
       background: #9defdd;
       color: black; }
 
+.searchdiv {
+  background: dimgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px; }
+  .searchdiv .searchresultlist {
+    padding: 0; }
+    .searchdiv .searchresultlist span {
+      padding-right: 5px; }
+    .searchdiv .searchresultlist li {
+      padding-top: 30px; }
+      .searchdiv .searchresultlist li a {
+        text-decoration: none;
+        color: white;
+        background: #ff9bfd;
+        padding: 10px;
+        border-radius: 10px; }
+        .searchdiv .searchresultlist li a:hover {
+          background: #b4ea89;
+          color: black; }
+
 #clickaheart {
   color: #ff9bfd; }
 
@@ -763,6 +785,40 @@ h1 a {
     color: black; }
   #backbutton:hover {
     background: #b3f3e4; }
+
+.companionlist li {
+  margin-top: 10px;
+  color: white; }
+
+.editlogdiv {
+  background: dimgrey;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px; }
+  .editlogdiv .editlogform label {
+    color: white;
+    padding-top: 10px; }
+
+.editlogform {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 500px;
+  height: auto; }
+  .editlogform input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 2px; }
+  .editlogform textarea {
+    width: 100%; }
+  .editlogform button {
+    background: #b4ea89;
+    border: none;
+    width: 200px;
+    height: 40px; }
+    .editlogform button:hover {
+      background: #d0f2b4;
+      cursor: pointer; }
 
 .newdatecontainer {
   display: flex;

@@ -48,3 +48,30 @@ h1 {
     background: lighten($blue, 10%);
   }
 }
+
+//Edit Date Log
+
+.companionlist {
+  li {
+    margin-top: 10px;
+    color: white;
+  }
+}
+
+.editlogdiv {
+  background: dimgrey;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  .editlogform {
+    label {
+      color: white;
+      padding-top: 10px;
+    }
+  }
+}
+
+.editlogform {
+  @include forms(500px);
+}
