@@ -104,7 +104,7 @@ post '/tags/onpage' do
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
   if @tag.save
-    redirect back
+    redirect('/tags')
   else
     erb(:tags)
   end
