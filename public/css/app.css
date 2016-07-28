@@ -372,6 +372,15 @@ html {
 * {
   font-family: sans-serif; }
 
+h1 {
+  color: #ffb5fe; }
+
+h3 {
+  color: #c2ee9f; }
+
+strong {
+  color: #fd9be0; }
+
 #logo {
   margin: 5px;
   width: auto;
@@ -382,7 +391,8 @@ html {
   flex-direction: row;
   justify-content: space-between;
   width: 100vw;
-  z-index: 1000; }
+  z-index: 1000;
+  margin-right: 50px; }
   .navbar .navbuttons {
     display: flex;
     flex-direction: row;
@@ -393,8 +403,13 @@ html {
     .navbar .navbuttons #newdates,
     .navbar .navbuttons #cats {
       width: 200px;
-      height: 50px;
+      height: 100%;
       border: none; }
+      .navbar .navbuttons #dates:hover,
+      .navbar .navbuttons #newdates:hover,
+      .navbar .navbuttons #cats:hover {
+        background: #9defdd;
+        cursor: pointer; }
       .navbar .navbuttons #dates a,
       .navbar .navbuttons #newdates a,
       .navbar .navbuttons #cats a {
@@ -417,6 +432,22 @@ html {
         .navbar .navbuttons #cats,
         .navbar .navbuttons #dates {
           width: 100%; } }
+
+.searchform {
+  display: flex;
+  flex-direction: column; }
+  .searchform input {
+    height: 40px; }
+  .searchform button {
+    width: 100%;
+    height: 60px;
+    color: white;
+    border: none;
+    background: #fd9be0; }
+    .searchform button:hover {
+      cursor: pointer;
+      background: #9defdd;
+      color: black; }
 
 .date-page {
   justify-content: center;
@@ -590,10 +621,6 @@ li {
   text-decoration: none;
   list-style: none; }
 
-<<<<<<< HEAD
-.hero {
-  background: url("../img/Couples-Date-Night2.jpg") no-repeat top center;
-=======
 .newdatecontainer {
   display: flex;
   flex-direction: column;
@@ -614,30 +641,60 @@ li {
     margin-bottom: 2px; }
   .dateform textarea {
     width: 100%; }
-  .dateform .addDate {
+  .dateform button {
     background: #b4ea89;
     border: none;
     width: 200px;
     height: 40px; }
+    .dateform button:hover {
+      background: #d0f2b4;
+      cursor: pointer; }
 
 .addcatform {
   display: flex; }
   .addcatform input {
     width: 200px;
-    height: 40px; }
+    height: 40px;
+    border: none;
+    padding: 0; }
   .addcatform button {
     background: #87ecd5;
     border: none;
     width: 200px;
     height: 40px; }
+    .addcatform button:hover {
+      background: #b3f3e4;
+      cursor: pointer; }
 
-.catlist .checkbox input {
-  margin: 20px; }
-.catlist .checkbox label {
-  font-size: 25px; }
+.catlist {
+  display: none; }
+  .catlist .checkbox input {
+    margin: 20px; }
+  .catlist .checkbox label {
+    color: white;
+    font-size: 25px; }
+    .catlist .checkbox label:hover {
+      color: #ff9bfd; }
 
 .selectcats {
   line-height: 50px; }
+
+input[type="checkbox"]:hover {
+  cursor: pointer; }
+
+.showstuff {
+  display: none; }
+
+#showlist {
+  height: 40px;
+  border: none;
+  background: #fc69d1;
+  color: white; }
+  #showlist:focus {
+    outline: none; }
+  #showlist:hover {
+    background: #fd9be0;
+    cursor: pointer; }
 
 .catcontainer {
   display: flex;
@@ -660,16 +717,20 @@ li {
       display: flex; }
       .catcontainer .cat-content .morecats input {
         width: 200px;
-        height: 40px; }
+        height: 40px;
+        border: none;
+        padding: 0; }
       .catcontainer .cat-content .morecats button {
         background: #87ecd5;
         border: none;
         width: 200px;
         height: 40px; }
+        .catcontainer .cat-content .morecats button:hover {
+          background: #b3f3e4;
+          cursor: pointer; }
 
-body {
-  background: url("http://lifenaples.com/wp-content/uploads/2016/01/Couples-Date-Night2.jpg") no-repeat top center;
->>>>>>> master
+.hero {
+  background: url("../img/Couples-Date-Night2.jpg") no-repeat top center;
   background-size: cover;
   width: 100%;
   height: 100vh;
