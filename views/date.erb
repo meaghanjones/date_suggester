@@ -91,8 +91,8 @@
   <% end %>
 </ul>
 <% end %>
-
 <h3>Enter a New Date Log:</h3>
+<%= erb(:errors, :locals => { :object => @datelog }) %>
 <form action="/datelogs/<%= @date_idea.id %>" method="post">
   <label for="rendezvous_time">When did you go on your date?</label>
   <input type="date" name="rendezvous_time" id="rendezvous_time">

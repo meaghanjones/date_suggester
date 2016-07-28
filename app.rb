@@ -43,6 +43,7 @@ end
 get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @tags = Tag.all - @date_idea.tags
+  @datelog = Datelog.new
   erb(:date)
 end
 
@@ -162,9 +163,14 @@ post '/datelogs/:date_idea_id' do
   romantic_interest = params[:romantic_interest]
   notes = params[:notes]
   date_idea_id = params.fetch('date_idea_id')
-  date_idea = DateIdea.find(date_idea_id)
-  date_idea.datelogs.create({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
-  redirect back
+  @date_idea = DateIdea.find(date_idea_id)
+  @datelog = @date_idea.datelogs.create({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
+  @tags = Tag.all - @date_idea.tags
+  if @datelog.save
+    redirect("/dates/#{@date_idea.id.to_s}")
+  else
+    erb(:date)
+  end
 end
 
 get '/datelogs/:id' do
