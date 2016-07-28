@@ -2,12 +2,17 @@
   justify-content: center;
   text-align: center;
   align-content: center;
+
+  h1{
+    color: white;
+    padding: 50px;
+  }
 }
 
 .date-header {
   height: 150px;
   width: 100%;
-  background-color: teal;
+  background-color: darken($green, 12%);
   margin-bottom: 20px;
 }
 
@@ -154,14 +159,15 @@
   }
 }
 
-.big-button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  .big-button {
+.big-button {
+  border: none;
+  height: 40px;
+  width: 150px;
+  background: $darkpink;
 
-    width: 30%;
-    height: 100px;
+  a{
+    text-decoration: none;
+    color: white;
   }
 }
 
@@ -169,3 +175,78 @@ li {
   text-decoration: none;
   list-style: none;
 }
+
+.datelogdiv {
+  background: dimgrey;
+  display: flex;
+  justify-content: center;
+
+  .currentlogs {
+    background: $pink;
+    width: 30%;
+
+    ul {
+      padding: 0;
+
+      li {
+        margin: 5px;
+        a{
+          text-decoration: none;
+        }
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .newdatelog {
+    background: $pink;
+    width: 30%;
+    .datelogform {
+      margin: 0 auto;
+      @include forms(400px);
+
+      label {
+        color: white;
+      }
+    }
+  }
+}
+
+//Category List styling
+
+.addcatdiv {
+  // background: $blue;
+
+  h3 {
+    padding-top: 10px;
+  }
+
+  #addcatlist {
+    button {
+      border: none;
+      background: transparent;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 45%;
+    padding: 0;
+
+    li {
+      margin: 5px;
+
+      a{
+        text-decoration: none;
+        color: $darkpink;
+      }
+    }
+  }
+}
+
+//Current categry styling

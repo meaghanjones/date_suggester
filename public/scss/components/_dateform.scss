@@ -67,3 +67,8 @@ input[type="checkbox"] {
     cursor: pointer;
   }
 }
+
+//Blank Name Error
+#errormessage {
+  color: darken(red, 10%);
+}
