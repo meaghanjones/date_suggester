@@ -96,17 +96,6 @@
   <button id="showlist">Hide/Show Categories</button>
 </div>
 
-<% if @date_idea.datelogs == [] %>
-<p>There are no date logs yet. Log your date below!</p>
-<% else %>
-<h3>Date Log</h3>
-<ul>
-  <% @date_idea.datelogs.order('rendezvous_time DESC').each do |datelog| %>
-  <li><a href = "/datelogs/<%= datelog.id %>"><%= datelog.rendezvous_time %>: <%= datelog.romantic_interest %></a></li>
-  <% end %>
-</ul>
-<% end %>
-
 <div class="datelogdiv">
   <div class="currentlogs">
     <% if @date_idea.datelogs == [] %>
