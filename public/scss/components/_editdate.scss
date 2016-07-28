@@ -1,0 +1,33 @@
+.updatecontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: dimgrey;
+  padding: 20px;
+}
+
+.editform {
+  @include forms(500px);
+}
+
+.deleteform {
+
+  button {
+    height: 40px;
+    width: 200px;
+    border: none;
+    background: lighten(red, 20%);
+
+    &:hover {
+      background: lighten(red, 25%);
+      cursor: pointer;
+    }
+  }
+}
+
+h1 {
+  a {
+    text-decoration: none;
+    color: lighten($pink, 5%);
+  }
+}

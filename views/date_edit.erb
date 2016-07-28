@@ -1,38 +1,42 @@
-<h1>Update
-    <% if @date_idea.name != '' %>
-    <a href = '/dates/<%=@date_idea.id %>'>
-    <%=@date_idea.name%>'s </a>Information
-    <% else %>
-    Information
-    <% end %>
-</h1>
+<div class="updatecontent">
 
-  <%= erb(:errors, :locals => { :object => @date_idea }) %>
-<div class="actionform">
+  <h1>Update
+      <% if @date_idea.name != '' %>
+      <a href = '/dates/<%=@date_idea.id %>'>
+      <%=@date_idea.name%>'s </a>Information
+      <% else %>
+      Information
+      <% end %>
+  </h1>
 
-  <form class="editform" action="/dates/<%= @date_idea.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
+    <%= erb(:errors, :locals => { :object => @date_idea }) %>
+  <div class="actionform">
 
-      <input type="text" name="name" value="<%= @date_idea.name %>" placeholder="Name">
+    <form class="editform" class="editform" action="/dates/<%= @date_idea.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
 
-    <% if @date_idea.address.==("\n,") %>
+        <input type="text" name="name" value="<%= @date_idea.name %>" placeholder="Name">
 
-      <textarea rows='3' name="address" placeholder="Address"></textarea>
+      <% if @date_idea.address.==("\n,") %>
 
-    <% else %>
+        <textarea rows='3' name="address" placeholder="Address"></textarea>
 
-      <textarea rows="3" name="address" id="address" placeholder="Address"><%= @date_idea.address %></textarea>
+      <% else %>
 
-    <% end %>
+        <textarea rows="3" name="address" id="address" placeholder="Address"><%= @date_idea.address %></textarea>
 
-    <textarea rows="8" name="description" id="description" placeholder="Description"><%= @date_idea.description %></textarea>
+      <% end %>
 
-    <button type="submit">Edit Date</button>
-  </form>
+      <textarea rows="8" name="description" id="description" placeholder="Description"><%= @date_idea.description %></textarea>
 
-  <form class="deleteform" action="/dates/<%= @date_idea.id %>" method="post">
-     <input type="hidden" name="_method" value="delete">
-     <button type="submit">Delete Date</button>
-  </form>
+      <button type="submit">Edit Date</button>
+    </form>
+
+    <form class="deleteform" action="/dates/<%= @date_idea.id %>" method="post">
+       <input type="hidden" name="_method" value="delete">
+       <button type="submit">Delete Date</button>
+    </form>
+
+  </div>
 
 </div>
