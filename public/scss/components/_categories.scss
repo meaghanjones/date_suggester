@@ -30,3 +30,49 @@
     }
   }
 }
+
+//Tag Details for tag.erb
+
+.tagdetaildiv {
+  background: dimgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.renametag {
+  @include forms(500px);
+
+  label {
+    color: white;
+    padding: 5px;
+  }
+}
+
+#listheart {
+  margin-top: 10px;
+  color: $darkpink;
+
+  a {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+  }
+}
+
+.killtag {
+  button {
+    border: none;
+    background: lighten(red, 20%);
+    height: 50px;
+    width: 300px;
+    margin-top: 30px;
+    font-size: 20px;
+
+    &:hover {
+      background: lighten(red, 25%);
+      cursor: pointer;
+    }
+  }
+}

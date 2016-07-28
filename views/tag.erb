@@ -1,31 +1,35 @@
-<h1><%= @tag.name %></h1>
-<%= erb(:errors, :locals => { :object => @tag }) %>
-<% if @tag.date_ideas == []%>
-<p>There are no dates added to this category yet.</p>
-<% else %>
-<ul>
-  <% @tag.date_ideas.each do |date_idea|%>
-  <li>
-    <span class = "fa <%= (date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (date_idea.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (date_idea.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (date_idea.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (date_idea.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+<div class="tagdetaildiv">
 
-    <a href="/dates/<%= date_idea.id %>"><%= date_idea.name %></a>
-  </li>
+  <h1><%= @tag.name %></h1>
+  <%= erb(:errors, :locals => { :object => @tag }) %>
+  <% if @tag.date_ideas == []%>
+  <p>There are no dates added to this category yet.</p>
+  <% else %>
+  <ul>
+    <% @tag.date_ideas.each do |date_idea|%>
+    <li id="listheart">
+      <span class = "fa <%= (date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
+      <span class = "fa <%= (date_idea.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+
+      <a href="/dates/<%= date_idea.id %>"><%= date_idea.name %></a>
+    </li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
 
-<form action="/tags/<%= @tag.id%>" method="post">
-  <input name="_method" type="hidden" value="patch">
-  <label for="tag_name">Rename this category</label>
-  <input id="tag_name" name="tag_name" type="text">
-  <button type="submit">Update</button>
-</form>
+  <form class ="renametag" action="/tags/<%= @tag.id%>" method="post">
+    <input name="_method" type="hidden" value="patch">
+    <label for="tag_name">Rename this category</label>
+    <input id="tag_name" name="tag_name" type="text">
+    <button type="submit">Update</button>
+  </form>
 
-<form action="/tags/<%= @tag.id %>/delete" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit" >Delete <%= @tag.name  %></button>
-</form>
+  <form class="killtag" action="/tags/<%= @tag.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" >Delete <%= @tag.name  %>?</button>
+  </form>
+
+</div>

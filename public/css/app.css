@@ -639,11 +639,16 @@ li {
     .datelogdiv .currentlogs ul {
       padding: 0; }
       .datelogdiv .currentlogs ul li {
-        margin: 5px; }
+        margin-top: 50px; }
         .datelogdiv .currentlogs ul li a {
-          text-decoration: none; }
-        .datelogdiv .currentlogs ul li:hover {
-          font-weight: bold; }
+          background: white;
+          padding: 10px;
+          text-decoration: none;
+          color: black;
+          border-radius: 10px; }
+          .datelogdiv .currentlogs ul li a:hover {
+            font-weight: bold;
+            color: #87ecd5; }
   .datelogdiv .newdatelog {
     margin: 5px;
     width: 30%; }
@@ -688,7 +693,8 @@ li {
   margin: 10px auto;
   width: 500px;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
   .catbox li {
     display: flex;
     width: 25%;
@@ -856,6 +862,56 @@ input[type="checkbox"]:hover {
         .catcontainer .cat-content .morecats button:hover {
           background: #b3f3e4;
           cursor: pointer; }
+
+.tagdetaildiv {
+  background: dimgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px; }
+
+.renametag {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 500px;
+  height: auto; }
+  .renametag input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 2px; }
+  .renametag textarea {
+    width: 100%; }
+  .renametag button {
+    background: #b4ea89;
+    border: none;
+    width: 200px;
+    height: 40px; }
+    .renametag button:hover {
+      background: #d0f2b4;
+      cursor: pointer; }
+  .renametag label {
+    color: white;
+    padding: 5px; }
+
+#listheart {
+  margin-top: 10px;
+  color: #fd9be0; }
+  #listheart a {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px; }
+
+.killtag button {
+  border: none;
+  background: #ff6666;
+  height: 50px;
+  width: 300px;
+  margin-top: 30px;
+  font-size: 20px; }
+  .killtag button:hover {
+    background: #ff8080;
+    cursor: pointer; }
 
 .hero {
   background: url("../img/Couples-Date-Night2.jpg") no-repeat top center;
