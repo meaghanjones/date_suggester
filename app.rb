@@ -22,12 +22,9 @@ post '/dates' do
   city = params[:city]
   state = params[:state]
   description = params[:description]
-  tag_ids = params[:tag_ids]
   address = "#{street}\n#{city},#{state}"
   rating = 0
-  @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
-  @tags = Tag.all
-  @tag = Tag.new
+  @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating})
   if @date_idea.save
     redirect to "/dates/#{@date_idea.id}"
   else
@@ -44,6 +41,7 @@ get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @tags = Tag.all - @date_idea.tags
   @datelog = Datelog.new
+  @tag = Tag.new
   erb(:date)
 end
 

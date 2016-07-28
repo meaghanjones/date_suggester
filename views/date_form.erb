@@ -1,43 +1,9 @@
 <div class="newdatecontainer">
-
-  <div class="formcontent">
-
-    <h1>Step 1: Add Categories to Help Organize Your dates!</h1>
-    <div>
-      <%= erb(:errors, :locals => { :object => @tag }) %>
-      <form class="addcatform" action="/tags" method="post">
-        <input type="text" name="tag_name" id="tag_name">
-        <button class="addcatbutton" type="submit">Add Category</button>
-      </form>
-    </div>
-    <br>
-    <button id="showlist">Hide/Show Categories</button>
-
-
-
-
-
     <div>
       <form class="dateform" action="/dates" method="post" class="form-container">
 
-        <div class="catlist">
-
-          <% if @tags.any? %>
-          <label class="selectcats" for="tag_ids[]"><strong>Select categories this date belongs to:</strong></label>
-            <% @tags.each do |tag| %>
-
-            <div class="checkbox">
-              <input class="tags" type="checkbox" name="tag_ids[]" value="<%= tag.id %>">
-              <label for="tag_ids[]"> <%= tag.name %> </label>
-            </div>
-            <% end %>
-          <% else %>
-
-          <% end %>
-        </div>
-
         <div class="addNewDateTitle">
-          <h1>Step 2: Add a New Date</h1>
+          <h1>Add a New Date</h1>
         </div>
         <%= erb(:errors, :locals => { :object => @date_idea }) %>
         <div class="form-group">
