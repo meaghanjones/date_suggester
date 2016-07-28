@@ -93,19 +93,6 @@ get '/tags/new' do
   erb(:tag_form)
 end
 
-post '/tags' do
-  tag_name = params.fetch('tag_name')
-  @tag = Tag.create(:name => tag_name)
-  @tags = Tag.all
-  @date_idea = DateIdea.new
-  if @tag.save
-    redirect back
-  else
-    erb(:date_form)
-  end
-
-end
-
 post '/tags/onpage' do
   tag_name = params.fetch('tag_name')
   @tag = Tag.create(:name => tag_name)
@@ -116,6 +103,21 @@ post '/tags/onpage' do
     erb(:tags)
   end
 end
+
+post '/tags/:date_idea_id' do
+  tag_name = params.fetch('tag_name')
+  @tag = Tag.create(:name => tag_name)
+  @tags = Tag.all
+  @datelog = Datelog.new
+  @date_idea = DateIdea.find(params.fetch('date_idea_id').to_i)
+  if @tag.save
+    redirect("/dates/#{@date_idea.id}")
+  else
+    erb(:date)
+  end
+
+end
+
 
 get '/tags' do
   @tags = Tag.all()
