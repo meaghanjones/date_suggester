@@ -93,15 +93,16 @@ get '/tags/new' do
   erb(:tag_form)
 end
 
-post '/tags' do
+post '/tags/:date_idea_id' do
   tag_name = params.fetch('tag_name')
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
-  @date_idea = DateIdea.new
+  @datelog = Datelog.new
+  @date_idea = DateIdea.find(params.fetch('date_idea_id').to_i)
   if @tag.save
-    redirect back
+    redirect("/dates/#{@date_idea.id}")
   else
-    erb(:date_form)
+    erb(:date)
   end
 
 end
