@@ -29,7 +29,7 @@ post '/dates' do
   @tags = Tag.all
   @tag = Tag.new
   if @date_idea.save
-    redirect to "/dates"
+    redirect to "/dates/#{@date_idea.id}"
   else
     erb(:date_form)
   end
