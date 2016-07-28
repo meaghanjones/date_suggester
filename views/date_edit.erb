@@ -1,19 +1,14 @@
 <h1>Update
-    <% if @date_idea.name != '' %>
-    <a href = '/dates/<%=@date_idea.id %>'>
-    <%=@date_idea.name%>'s </a>Information
-    <% else %>
-    Information
-    <% end %>
+  <%=@date_idea.name%>'s Information
 </h1>
 
-  <%= erb(:errors, :locals => { :object => @date_idea }) %>
+<%= erb(:errors, :locals => { :object => @date_idea }) %>
 <div class="actionform">
 
   <form class="editform" action="/dates/<%= @date_idea.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
 
-      <input type="text" name="name" value="<%= @date_idea.name %>" placeholder="Name">
+      <input type="text" name="name" value="<%= @date_idea.name %>" placeholder="Name" required>
 
     <% if @date_idea.address.==("\n,") %>
 
@@ -36,3 +31,4 @@
   </form>
 
 </div>
+<button type="button"><a href="/dates/<%= @date_idea.id %>">Back to <%= @date_idea.name %>'s Page</button>
