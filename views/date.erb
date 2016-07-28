@@ -87,7 +87,7 @@
   <h3>Add Categories to Help Organize Your dates!</h3>
   <div>
     <%= erb(:errors, :locals => { :object => @tag }) %>
-    <form class="addcatform" action="/tags" method="post">
+    <form class="addcatform" action="/tags/<%= @date_idea.id %>" method="post">
       <input type="text" name="tag_name" id="tag_name">
       <button class="addcatbutton" type="submit">Add Category</button>
     </form>
