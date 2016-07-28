@@ -1,6 +1,6 @@
 <h1>Update <a href = '/dates/<%=@date_idea.id %>'> <%=@date_idea.name%>'s Information</a></h1>
 
-
+  <%= erb(:errors, :locals => { :object => @date_idea }) %>
 <div class="actionform">
 
   <form class="editform" action="/dates/<%= @date_idea.id %>" method="post">
