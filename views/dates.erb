@@ -9,13 +9,26 @@
   <ul>
     <% @date_ideas.each() do |date_idea| %>
     <li>
-      <span class = "fa <%= (date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
-      <span class = "fa <%= (date_idea.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
-      <span class = "fa <%= (date_idea.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
-      <span class = "fa <%= (date_idea.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
-      <span class = "fa <%= (date_idea.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+      <form action="/dates/<%= date_idea.id %>/rate" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <button id="heart_1" value=1 name="rating">
+          <span class = "fa <%= (date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
+        </button>
+        <button id="heart_2" value=2 name="rating">
+          <span class = "fa <%= (date_idea.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
+        </button>
+        <button id="heart_3" value=3 name="rating">
+          <span class = "fa <%= (date_idea.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
+        </button>
+        <button id="heart_4" value=4 name="rating">
+          <span class = "fa <%= (date_idea.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
+        </button>
+        <button id="heart_5" value=5 name="rating">
+          <span class = "fa <%= (date_idea.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+        </button>
 
-      <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a>
+        <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a>
+      </form>
     </li>
     <% end %>
   </ul>

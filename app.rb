@@ -28,7 +28,11 @@ post '/dates' do
   @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
   @tags = Tag.all
   @tag = Tag.new
-  redirect to "/dates"
+  if @date_idea.save
+    redirect to "/dates"
+  else
+    erb(:date_form)
+  end
 end
 
 get '/dates/random' do
@@ -39,12 +43,21 @@ end
 get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @tags = Tag.all - @date_idea.tags
+  @datelog = Datelog.new
   erb(:date)
 end
 
 get '/dates' do
   @date_ideas = DateIdea.order('rating  DESC')
   erb(:dates)
+end
+
+patch '/dates/:id/rate' do
+  @date_ideas = DateIdea.order('rating  DESC')
+  date_idea = DateIdea.find(params.fetch('id').to_i)
+  rating = params.fetch('rating').to_i
+  date_idea.update({:rating => rating})
+  redirect to("/dates")
 end
 
 get '/dates/:id/edit' do
@@ -61,7 +74,7 @@ patch '/dates/:id' do
   if @date_idea.save()
     redirect('/dates/'.concat(@date_idea.id.to_s))
   else
-    redirect("/dates/#{@date_idea.id}/edit")
+    erb(:date_edit)
   end
 end
 
@@ -87,7 +100,12 @@ post '/tags' do
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
   @date_idea = DateIdea.new
-  redirect('/dates/new')
+  if @tag.save
+    redirect back
+  else
+    erb(:date_form)
+  end
+
 end
 
 post '/tags/onpage' do
@@ -97,7 +115,7 @@ post '/tags/onpage' do
   if @tag.save
     redirect('/tags')
   else
-    erb(:_errors)
+    erb(:tags)
   end
 end
 
@@ -135,7 +153,11 @@ patch '/tags/:id' do
   @tag = Tag.find(params.fetch('id').to_i)
   name = params.fetch('tag_name')
   @tag.update({:name => name})
-  redirect('/tags/'.concat(@tag.id.to_s))
+  if @tag.save
+    redirect back
+  else
+    erb(:tag)
+  end
 end
 
 delete '/tags/:id/delete' do
@@ -149,9 +171,14 @@ post '/datelogs/:date_idea_id' do
   romantic_interest = params[:romantic_interest]
   notes = params[:notes]
   date_idea_id = params.fetch('date_idea_id')
-  date_idea = DateIdea.find(date_idea_id)
-  date_idea.datelogs.create({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
-  redirect back
+  @date_idea = DateIdea.find(date_idea_id)
+  @datelog = @date_idea.datelogs.create({:rendezvous_time => rendezvous_time, :romantic_interest => romantic_interest, :notes => notes})
+  @tags = Tag.all - @date_idea.tags
+  if @datelog.save
+    redirect("/dates/#{@date_idea.id.to_s}")
+  else
+    erb(:date)
+  end
 end
 
 get '/datelogs/:id' do
@@ -173,7 +200,7 @@ patch '/datelogs/:id' do
   if @datelog.save()
     redirect('/datelogs/'.concat(@datelog.id.to_s))
   else
-    erb(:date_log)
+    erb(:datelog_edit)
   end
 end
 
