@@ -450,6 +450,9 @@ strong {
       background: #9defdd;
       color: black; }
 
+#clickaheart {
+  color: #ff9bfd; }
+
 .date-page {
   justify-content: center;
   text-align: center;
@@ -749,6 +752,17 @@ li {
 h1 a {
   text-decoration: none;
   color: #ffb5fe; }
+
+#backbutton {
+  border: none;
+  background: #87ecd5;
+  height: 40px;
+  padding: 5px; }
+  #backbutton a {
+    text-decoration: none;
+    color: black; }
+  #backbutton:hover {
+    background: #b3f3e4; }
 
 .newdatecontainer {
   display: flex;

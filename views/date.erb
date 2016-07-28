@@ -3,7 +3,9 @@
 <div class="date-header">
   <h1><%= @date_idea.name %></h1>
 </div>
-
+<div>
+  <h3 id="clickaheart">Click on a heart to rate your date one to five!</h3>
+</div>
 <form action="/dates/<%= @date_idea.id %>/rating"  method="post">
   <button id="heart1" class="heart-rating" value=1 name="rating">
     <span class = "fa <%= (@date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
@@ -95,21 +97,19 @@
   <h3>Add Categories to Help Organize Your dates!</h3>
   <div>
     <%= erb(:errors, :locals => { :object => @tag }) %>
-    <form class="addcatform" action="/tags" method="post">
+    <form class="addcatform" action="/tags/<%= @date_idea.id %>" method="post">
       <input type="text" name="tag_name" id="tag_name">
       <button class="addcatbutton" type="submit">Add Category</button>
     </form>
   </div>
 </div>
 
-
-
 <div class="datelogdiv">
 
   <div class="currentlogs">
     <h2>Date Log:</h2>
     <% if @date_idea.datelogs == [] %>
-      <p>There are no date logs yet. Log your date below!</p>
+      <p>There are no date logs yet. Log your date here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
     <% else %>
 
     <ul>
