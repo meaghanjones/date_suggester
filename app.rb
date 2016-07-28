@@ -28,7 +28,11 @@ post '/dates' do
   @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
   @tags = Tag.all
   @tag = Tag.new
-  redirect to "/dates"
+  if @date_idea.save
+    redirect to "/dates"
+  else
+    erb(:date_form)
+  end
 end
 
 get '/dates/random' do
@@ -87,7 +91,12 @@ post '/tags' do
   @tag = Tag.create(:name => tag_name)
   @tags = Tag.all
   @date_idea = DateIdea.new
-  redirect('/dates/new')
+  if @tag.save
+    redirect back
+  else
+    erb(:date_form)
+  end
+
 end
 
 post '/tags/onpage' do
