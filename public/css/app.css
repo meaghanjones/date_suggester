@@ -381,6 +381,9 @@ h3 {
 strong {
   color: #fd9be0; }
 
+.showstuff {
+  display: none; }
+
 #logo {
   margin: 5px;
   width: auto;
@@ -744,9 +747,6 @@ li {
 
 input[type="checkbox"]:hover {
   cursor: pointer; }
-
-.showstuff {
-  display: none; }
 
 #showlist {
   height: 40px;
