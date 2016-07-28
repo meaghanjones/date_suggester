@@ -81,6 +81,20 @@
 </ul>
 <% end %>
 
+<div class="formcontent">
+
+  <h3>Add Categories to Help Organize Your dates!</h3>
+  <div>
+    <%= erb(:errors, :locals => { :object => @tag }) %>
+    <form class="addcatform" action="/tags" method="post">
+      <input type="text" name="tag_name" id="tag_name">
+      <button class="addcatbutton" type="submit">Add Category</button>
+    </form>
+  </div>
+  <br>
+  <button id="showlist">Hide/Show Categories</button>
+</div>
+
 <% if @date_idea.datelogs == [] %>
 <p>There are no date logs yet. Log your date below!</p>
 <% else %>
