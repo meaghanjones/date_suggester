@@ -381,6 +381,9 @@ h3 {
 strong {
   color: #fd9be0; }
 
+.showstuff {
+  display: none; }
+
 #logo {
   margin: 5px;
   width: auto;
@@ -625,12 +628,14 @@ li {
   list-style: none; }
 
 .datelogdiv {
-  background: dimgrey;
+  background: #ff9bfd;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  padding: 20px; }
   .datelogdiv .currentlogs {
-    background: #ff9bfd;
-    width: 30%; }
+    margin: 5px;
+    width: 30%;
+    border-radius: 20px; }
     .datelogdiv .currentlogs ul {
       padding: 0; }
       .datelogdiv .currentlogs ul li {
@@ -640,7 +645,7 @@ li {
         .datelogdiv .currentlogs ul li:hover {
           font-weight: bold; }
   .datelogdiv .newdatelog {
-    background: #ff9bfd;
+    margin: 5px;
     width: 30%; }
     .datelogdiv .newdatelog .datelogform {
       margin: 0 auto;
@@ -668,20 +673,35 @@ li {
 
 .addcatdiv h3 {
   padding-top: 10px; }
-.addcatdiv #addcatlist button {
-  border: none;
-  background: transparent; }
-.addcatdiv ul {
+
+.formcontent {
+  background: #ff9bfd;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 45%;
-  padding: 0; }
-  .addcatdiv ul li {
+  flex-direction: column; }
+  .formcontent h3 {
+    color: white; }
+  .formcontent div {
+    align-self: center; }
+
+.catbox {
+  padding: 0;
+  margin: 10px auto;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap; }
+  .catbox li {
+    display: flex;
+    width: 25%;
+    background: #fbf5a2;
+    border-radius: 5px;
     margin: 5px; }
-    .addcatdiv ul li a {
-      text-decoration: none;
-      color: #fd9be0; }
+    .catbox li form button {
+      border: none;
+      background: transparent;
+      color: #ff9bfd;
+      font-size: 40px; }
+    .catbox li form .tagname {
+      font-size: 17px; }
 
 .updatecontent {
   display: flex;
@@ -726,7 +746,7 @@ h1 a {
 
 .newdatecontainer {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   background: dimgrey;
   padding: 20px; }
   .newdatecontainer .formcontent {
@@ -787,9 +807,6 @@ h1 a {
 input[type="checkbox"]:hover {
   cursor: pointer; }
 
-.showstuff {
-  display: none; }
-
 #showlist {
   height: 40px;
   border: none;
@@ -803,6 +820,9 @@ input[type="checkbox"]:hover {
 
 #errormessage {
   color: #cc0000; }
+
+#datelocal {
+  color: #ff9bfd; }
 
 .catcontainer {
   display: flex;
