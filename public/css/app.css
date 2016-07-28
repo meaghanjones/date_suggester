@@ -369,11 +369,6 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit; }
-
 * {
   font-family: sans-serif; }
 
@@ -385,6 +380,9 @@ h3 {
 
 strong {
   color: #fd9be0; }
+
+.showstuff {
+  display: none; }
 
 #logo {
   margin: 5px;
