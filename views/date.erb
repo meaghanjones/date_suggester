@@ -3,7 +3,9 @@
 <div class="date-header">
   <h1><%= @date_idea.name %></h1>
 </div>
-
+<div>
+  <h3>Click on a heart to rate your date one to five!</h3>
+</div>
 <form action="/dates/<%= @date_idea.id %>/rating"  method="post">
   <button id="heart1" class="heart-rating" value=1 name="rating">
     <span class = "fa <%= (@date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
