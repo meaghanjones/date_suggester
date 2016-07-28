@@ -1,4 +1,5 @@
 <h1>Edit Your Date Log:</h1>
+<%= erb(:errors, :locals => { :object => @datelog }) %>
 <form action="/datelogs/<%= @datelog.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label for="rendezvous_time">When did you go on your date?</label>

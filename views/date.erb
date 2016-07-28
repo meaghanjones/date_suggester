@@ -66,7 +66,7 @@
 
 <h3><strong>Add Categories to this date</strong></h3>
 <% if @tags == [] %>
-<p>There are no categories to save to the date. <a href="/tags/new">Add a New Category</a></p>
+<p>There are no categories to save to the date.</p>
 <% else %>
 <ul>
   <% @tags.each do |tag| %>
@@ -81,9 +81,6 @@
 </ul>
 <% end %>
 
-<button><a href='/dates/<%= @date_idea.id %>/edit'>Edit Your Date</a></button>
-
-
 <% if @date_idea.datelogs == [] %>
 <p>There are no date logs yet. Log your date below!</p>
 <% else %>
@@ -94,8 +91,8 @@
   <% end %>
 </ul>
 <% end %>
-
-<h1>Enter a New Date Log:</h1>
+<h3>Enter a New Date Log:</h3>
+<%= erb(:errors, :locals => { :object => @datelog }) %>
 <form action="/datelogs/<%= @date_idea.id %>" method="post">
   <label for="rendezvous_time">When did you go on your date?</label>
   <input type="date" name="rendezvous_time" id="rendezvous_time">

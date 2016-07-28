@@ -1,7 +1,7 @@
 <h1><%= @tag.name %></h1>
-
+<%= erb(:errors, :locals => { :object => @tag }) %>
 <% if @tag.date_ideas == []%>
-<p>There are no dates added to this category yet. Please add them <a href="/dates/new">here</a>.</p>
+<p>There are no dates added to this category yet.</p>
 <% else %>
 <ul>
   <% @tag.date_ideas.each do |date_idea|%>
