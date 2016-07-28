@@ -19,6 +19,12 @@
     width: auto;
     margin-right: 0;
 
+    a{
+      text-decoration: none;
+      // font-weight: bold;
+      font-size: 20px;
+    }
+
     #dates,
     #newdates,
     #cats {
@@ -29,12 +35,6 @@
       &:hover{
         background: lighten($blue, 5%);
         cursor: pointer;
-      }
-
-      a{
-        text-decoration: none;
-        // font-weight: bold;
-        font-size: 20px;
       }
     }
     #dates {
@@ -64,6 +64,7 @@
     }
   }
 }
+
 
 .searchform {
   display: flex;

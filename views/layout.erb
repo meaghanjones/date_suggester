@@ -13,14 +13,14 @@
       <div id="navbar1" class="navbar">
           <div id="home"><a href='/'><img id="logo" src="../img/LOGO3.png" alt="LOGO2" /></a></div>
         <div class="navbuttons">
-          <button id="dates"><a href='/dates'>View All Dates</a></button>
-          <button id="newdates"><a href='/dates/new'>New Date</a></button>
-          <button id="cats"><a href='/tags'>Categories</a></button>
+          <a href='/dates'><button id="dates">View All Dates</button></a>
+          <a href='/dates/new'><button id="newdates">New Date</button></a>
+          <a href='/tags'><button id="cats">Categories</button></a>
 
           <div class="search-bar">
 
-            <form action="/dates/search" method="post" >
-              <input type="text" name="date_idea_search" placeholder= "Search Date Ideas by Name">
+            <form class="searchform" action="/dates/search" method="post" >
+              <input type="text" name="date_idea_search" placeholder= "Search Dates">
               <button type="submit" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
           </div>

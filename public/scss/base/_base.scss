@@ -120,3 +120,12 @@ strong {
     }
   }
 }
+
+@mixin list {
+  padding: 0;
+  margin: 0;
+
+  .listitem {
+    
+  }
+}

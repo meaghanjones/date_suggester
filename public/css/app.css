@@ -399,6 +399,9 @@ strong {
     justify-content: flex-end;
     width: auto;
     margin-right: 0; }
+    .navbar .navbuttons a {
+      text-decoration: none;
+      font-size: 20px; }
     .navbar .navbuttons #dates,
     .navbar .navbuttons #newdates,
     .navbar .navbuttons #cats {
@@ -410,11 +413,6 @@ strong {
       .navbar .navbuttons #cats:hover {
         background: #9defdd;
         cursor: pointer; }
-      .navbar .navbuttons #dates a,
-      .navbar .navbuttons #newdates a,
-      .navbar .navbuttons #cats a {
-        text-decoration: none;
-        font-size: 20px; }
     .navbar .navbuttons #dates {
       background: #ff9bfd; }
     .navbar .navbuttons #newdates {
@@ -455,7 +453,8 @@ strong {
   align-content: center; }
   .date-page h1 {
     color: white;
-    padding: 50px; }
+    padding: 50px;
+    margin: 0; }
 
 .date-header {
   height: 150px;
@@ -772,13 +771,15 @@ h1 a {
 
 .catlist {
   display: none; }
-  .catlist .checkbox input {
-    margin: 20px; }
-  .catlist .checkbox label {
-    color: white;
-    font-size: 25px; }
-    .catlist .checkbox label:hover {
-      color: #ff9bfd; }
+  .catlist .checkbox {
+    display: flex; }
+    .catlist .checkbox input {
+      margin: 20px; }
+    .catlist .checkbox label {
+      color: white;
+      font-size: 25px; }
+      .catlist .checkbox label:hover {
+        color: #ff9bfd; }
 
 .selectcats {
   line-height: 50px; }
