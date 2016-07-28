@@ -1,3 +1,7 @@
+#clickaheart {
+  color: $pink;
+}
+
 .date-page {
   justify-content: center;
   text-align: center;
@@ -6,6 +10,7 @@
   h1{
     color: white;
     padding: 50px;
+    margin: 0;
   }
 }
 
@@ -177,32 +182,39 @@ li {
 }
 
 .datelogdiv {
-  background: dimgrey;
+  background: $pink;
   display: flex;
   justify-content: center;
+  padding: 20px;
 
   .currentlogs {
-    background: $pink;
+    margin: 5px;
     width: 30%;
+    border-radius: 20px;
 
     ul {
       padding: 0;
 
       li {
-        margin: 5px;
+        margin-top: 50px;
         a{
+          background: white;
+          padding: 10px;
           text-decoration: none;
-        }
+          color: black;
+          border-radius: 10px;
 
-        &:hover {
-          font-weight: bold;
+          &:hover {
+            font-weight: bold;
+            color: $blue;
+          }
         }
       }
     }
   }
 
   .newdatelog {
-    background: $pink;
+    margin: 5px;
     width: 30%;
     .datelogform {
       margin: 0 auto;
@@ -224,29 +236,52 @@ li {
     padding-top: 10px;
   }
 
-  #addcatlist {
-    button {
-      border: none;
-      background: transparent;
-    }
+}
+
+//Current category styling
+.formcontent {
+
+
+  background: $pink;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    color: white;
   }
 
-  ul {
+  div {
+    align-self: center;
+  }
+}
+
+//Category box
+.catbox {
+  padding: 0;
+  margin: 10px auto;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  li {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 45%;
-    padding: 0;
+    width: 25%;
+    background: $yellow;
+    border-radius: 5px;
+    margin: 5px;
 
-    li {
-      margin: 5px;
+    form {
+      button {
+        border: none;
+        background: transparent;
+        color: $pink;
+        font-size: 40px;
+      }
 
-      a{
-        text-decoration: none;
-        color: $darkpink;
+      .tagname {
+        font-size: 17px;
       }
     }
   }
 }
-
-//Current categry styling
