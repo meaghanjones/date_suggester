@@ -5,21 +5,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/app.css">
     <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA2sPrAMqr4ADBjuYAfhDMAJwm8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAARUAAAAAAAARVVAAAAAAARVVVQAAAAARVVTVUAAAARVVVUVVAAARVVVVVNVQABFVVVVUlVAAEVVVUVVVUAABFVUBFVUAAAAREAAREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP7/AAD8fwAA+D8AAPAfAADgDwAAwAcAAIADAACAAwAAgAMAAMEHAADjjwAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+    <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
   </head>
   <body>
     <div class="container">
       <div id="navbar1" class="navbar">
           <div id="home"><a href='/'><img id="logo" src="../img/LOGO3.png" alt="LOGO2" /></a></div>
         <div class="navbuttons">
-          <button id="dates"><a href='/dates'>Dates</a></button>
+          <button id="dates"><a href='/dates'>View All Dates</a></button>
           <button id="newdates"><a href='/dates/new'>New Date</a></button>
           <button id="cats"><a href='/tags'>Categories</a></button>
+
           <div class="search-bar">
-            <form action="/dates/search" method="post">
-              <input type="text" name="date_idea_search">
+
+            <form action="/dates/search" method="post" >
+              <input type="text" name="date_idea_search" placeholder= "Search Date Ideas by Name">
               <button type="submit" class="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
           </div>
+
         </div>
       </div>
 
