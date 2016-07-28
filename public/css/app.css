@@ -369,6 +369,11 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
 * {
   font-family: sans-serif; }
 
@@ -390,7 +395,7 @@ strong {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
   margin-right: 50px; }
   .navbar .navbuttons {
@@ -729,16 +734,152 @@ input[type="checkbox"]:hover {
           background: #b3f3e4;
           cursor: pointer; }
 
-.hero {
-  background: url("../img/Couples-Date-Night2.jpg") no-repeat top center;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  color: white;
-  overflow: hidden;
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  height: auto; }
+  .hero-container .hero {
+    background: url("../img/Couples-Date-Night2.jpg") no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1000;
+    flex-direction: column; }
+
+a.hero-button {
+  width: 170px;
+  height: 65px;
+  background: #da98f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 425px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  text-decoration: none;
+  color: black; }
+
+.hero-button::before {
+  content: ''; }
+
+.hero-button::after {
+  content: '';
+  border-top: 10px solid #da98f0;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1000; }
+  right: 40%;
+  top: 100%; }
+
+.dates-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  transform: translate(0, 70px); }
+  .dates-section .welcome-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+    width: auto;
+    color: white;
+    text-decoration: none;
+    align-items: flex-end;
+    padding: 3%; }
+
+.welcome-section {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale; }
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+  .welcome-section:hover, .welcome-section:focus, .welcome-section:active {
+    -webkit-animation-name: hvr-pulse-grow;
+    animation-name: hvr-pulse-grow;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate; }
+
+#container-welcome1 {
+  display: inline-flex;
+  background: url("../img/1.jpg") no-repeat top center;
+  background-size: cover;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 20em;
+  align-items: flex-start;
+  color: white; }
+
+#container-welcome2 {
+  display: inline-flex;
+  background: url("../img/2.jpg") no-repeat top center;
+  background-size: cover;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 25%;
+  height: 20em; }
+
+#container-welcome3 {
+  display: inline-flex;
+  background: url("../img/21.jpg") no-repeat top center;
+  align-items: flex-start;
+  background-size: cover;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 25%;
+  height: 20em; }
+
+#container-welcome4 {
+  display: inline-flex;
+  background: url("../img/4.png") no-repeat top center;
+  background-size: cover;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 25%;
+  height: 20em;
+  color: black; }
+
+#container-welcome5 {
+  display: inline-flex;
+  background: url("../img/5.jpg") no-repeat top center;
+  background-size: cover;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 25%;
+  height: 20em; }
+
+#container-welcome6 {
+  display: inline-flex;
+  background: url("../img/6.jpg") no-repeat top center;
+  background-size: cover;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 20em; }
 
 /*# sourceMappingURL=app.css.map */
