@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-  $(".catlist").show();
+  $(".categorylist").show();
 
   $("#showlist").click(function(){
-    $(".catlist").toggle(".showstuff");
+    $(".blabla").toggle(".showstuff");
     })
 });
