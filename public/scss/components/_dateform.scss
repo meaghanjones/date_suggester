@@ -20,6 +20,8 @@
 }
 
 .catlist {
+  display: none;
+
   .checkbox {
     input {
       margin: 20px;
@@ -27,11 +29,41 @@
 
     }
     label {
+      color: white;
       font-size: 25px;
+
+      &:hover {
+        color: $pink;
+      }
     }
   }
 }
 
 .selectcats {
   line-height: 50px;
+}
+
+input[type="checkbox"] {
+  &:hover {
+    cursor: pointer;
+  }
+}
+//Toggle List Display
+.showstuff {
+  display: none;
+}
+
+#showlist {
+  height: 40px;
+  border: none;
+  background: darken($darkpink, 10%);
+  color: white;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover{
+    background: $darkpink;
+    cursor: pointer;
+  }
 }
