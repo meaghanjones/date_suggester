@@ -64,7 +64,7 @@
 </ul>
 <% end %>
 
-
+<div class="addcatdiv">
   <h3><strong>Add Categories to this date</strong></h3>
   <% if @tags == [] %>
   <p>There are no categories to save to the date.</p>
@@ -72,7 +72,7 @@
   <ul>
     <% @tags.each do |tag| %>
     <li>
-      <form action="/tags/<%= tag.id %>/add/<%= @date_idea.id %>" method="post">
+      <form id="addcatlist" class="" action="/tags/<%= tag.id %>/add/<%= @date_idea.id %>" method="post">
         <input type="hidden" name="_method" value="patch">
         <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
         <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
@@ -81,6 +81,8 @@
     <% end %>
   </ul>
   <% end %>
+</div>
+
 
 <div class="datelogdiv">
   <div class="currentlogs">

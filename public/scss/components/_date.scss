@@ -216,3 +216,31 @@ li {
 }
 
 //Category List styling
+
+.addcatdiv {
+  background: $blue;
+
+
+  #addcatlist {
+    button {
+      border: none;
+      background: transparent;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 40%;
+    padding: 0;
+
+    li {
+      margin: 5px;
+
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}

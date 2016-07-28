@@ -667,6 +667,22 @@ li {
       .datelogdiv .newdatelog .datelogform label {
         color: white; }
 
+.addcatdiv {
+  background: #87ecd5; }
+  .addcatdiv #addcatlist button {
+    border: none;
+    background: transparent; }
+  .addcatdiv ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 40%;
+    padding: 0; }
+    .addcatdiv ul li {
+      margin: 5px; }
+      .addcatdiv ul li a {
+        text-decoration: none; }
+
 .newdatecontainer {
   display: flex;
   flex-direction: column;
