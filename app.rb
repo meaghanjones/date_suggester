@@ -200,7 +200,7 @@ patch '/datelogs/:id' do
   if @datelog.save()
     redirect('/datelogs/'.concat(@datelog.id.to_s))
   else
-    erb(:datelog_edit)
+    erb(:datelog)
   end
 end
 
