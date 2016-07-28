@@ -453,11 +453,14 @@ strong {
   justify-content: center;
   text-align: center;
   align-content: center; }
+  .date-page h1 {
+    color: white;
+    padding: 50px; }
 
 .date-header {
   height: 150px;
   width: 100%;
-  background-color: teal;
+  background-color: #93e155;
   margin-bottom: 20px; }
 
 .heart-rating {
@@ -609,17 +612,60 @@ strong {
       -webkit-animation-direction: alternate;
       animation-direction: alternate; }
 
-.big-button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-  .big-button-container .big-button {
-    width: 30%;
-    height: 100px; }
+.big-button {
+  border: none;
+  height: 40px;
+  width: 150px;
+  background: #fd9be0; }
+  .big-button a {
+    text-decoration: none;
+    color: white; }
 
 li {
   text-decoration: none;
   list-style: none; }
+
+.datelogdiv {
+  background: dimgrey;
+  display: flex;
+  justify-content: center; }
+  .datelogdiv .currentlogs {
+    background: #ff9bfd;
+    width: 30%; }
+    .datelogdiv .currentlogs ul {
+      padding: 0; }
+      .datelogdiv .currentlogs ul li {
+        margin: 5px; }
+        .datelogdiv .currentlogs ul li a {
+          text-decoration: none; }
+        .datelogdiv .currentlogs ul li:hover {
+          font-weight: bold; }
+  .datelogdiv .newdatelog {
+    background: #ff9bfd;
+    width: 30%; }
+    .datelogdiv .newdatelog .datelogform {
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      width: 400px;
+      height: auto; }
+      .datelogdiv .newdatelog .datelogform input {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 2px; }
+      .datelogdiv .newdatelog .datelogform textarea {
+        width: 100%; }
+      .datelogdiv .newdatelog .datelogform button {
+        background: #b4ea89;
+        border: none;
+        width: 200px;
+        height: 40px; }
+        .datelogdiv .newdatelog .datelogform button:hover {
+          background: #d0f2b4;
+          cursor: pointer; }
+      .datelogdiv .newdatelog .datelogform label {
+        color: white; }
 
 .newdatecontainer {
   display: flex;
@@ -695,6 +741,9 @@ input[type="checkbox"]:hover {
   #showlist:hover {
     background: #fd9be0;
     cursor: pointer; }
+
+#errormessage {
+  color: #cc0000; }
 
 .catcontainer {
   display: flex;

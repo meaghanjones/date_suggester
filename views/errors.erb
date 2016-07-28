@@ -3,7 +3,7 @@
   <h3>Oops there were some errors. Please try again:</h3>
   <ul>
     <% object.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li id="errormessage"><%= message %></li>
     <% end %>
   </ul>
 <% end %>
