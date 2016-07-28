@@ -28,6 +28,8 @@ html {
 //   height: 100vh;
 // }
 
+
+
 //Variables
 $blue: #87ecd5;
 $green: #b4ea89;
@@ -35,6 +37,19 @@ $yellow: #fbf5a2;
 $pink: #ff9bfd;
 $darkpink: #fd9be0;
 $purple: #da98f0;
+
+//Text Styles
+h1 {
+  color: lighten($pink, 5%);
+}
+
+h3 {
+  color: lighten($green, 5%);
+}
+
+strong {
+  color: $darkpink;
+}
 
 //Mixin
 @mixin kaboom {
@@ -71,11 +86,16 @@ $purple: #da98f0;
     width: 100%;
   }
 
-  .addDate {
+  button {
     background: $green;
     border: none;
     width: 200px;
     height: 40px;
+
+    &:hover {
+      background: lighten($green, 10%);
+      cursor: pointer;
+    }
   }
 }
 
@@ -85,11 +105,18 @@ $purple: #da98f0;
   input {
     width: 200px;
     height: 40px;
+    border: none;
+    padding: 0;
   }
   button {
     background: $blue;
     border: none;
     width: 200px;
     height: 40px;
+
+    &:hover {
+      background: lighten($blue, 10%);
+      cursor: pointer;
+    }
   }
 }
