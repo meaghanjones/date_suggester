@@ -52,6 +52,14 @@ get '/dates' do
   erb(:dates)
 end
 
+patch '/dates/:id/rate' do
+  @date_ideas = DateIdea.order('rating  DESC')
+  date_idea = DateIdea.find(params.fetch('id').to_i)
+  rating = params.fetch('rating').to_i
+  date_idea.update({:rating => rating})
+  redirect to("/dates")
+end
+
 get '/dates/:id/edit' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   erb(:date_edit)
