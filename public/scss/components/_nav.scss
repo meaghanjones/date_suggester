@@ -89,3 +89,34 @@
     }
   }
 }
+
+//Search Results
+
+.searchdiv {
+  background: dimgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+
+  .searchresultlist {
+    padding: 0;
+
+    li {
+      padding-top: 30px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: $pink;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+          background: $green;
+          color: black;
+        }
+      }
+    }
+  }
+}
