@@ -47,22 +47,24 @@
   <button class="big-button"><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
 </div>
 
-<h3><strong>Categories:</strong></h3>
-<% if @date_idea.tags == [] %>
-<p>There are no categories for this date yet, add them below!</p>
-<% else %>
-<ul>
-  <% @date_idea.tags.each do |tag| %>
-  <li>
-    <form action="/tags/<%= tag.id %>/remove/<%= @date_idea.id %>" method="post">
-      <input type="hidden" name="_method" value="patch">
-      <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-      <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
-    </form>
-  </li>
+<div class="datecats">
+  <h3><strong>Categories:</strong></h3>
+  <% if @date_idea.tags == [] %>
+  <p>There are no categories for this date yet, add them below!</p>
+  <% else %>
+  <ul>
+    <% @date_idea.tags.each do |tag| %>
+    <li>
+      <form action="/tags/<%= tag.id %>/remove/<%= @date_idea.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+      </form>
+    </li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
+</div>
 
 <div class="addcatdiv">
   <h3><strong>Add Categories to this date</strong></h3>
