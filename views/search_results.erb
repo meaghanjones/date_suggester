@@ -1,18 +1,22 @@
 <div class="searchdiv">
 
-<h1>Search Results:</h1>
-<ul class="searchresultlist">
-  <% @search_results.each do |result| %>
-  <li>
-    <span class = "fa <%= (result.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (result.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (result.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (result.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
-    <span class = "fa <%= (result.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+  <h1 class="searchcolor">Search Results:</h1>
 
-    <a href="/dates/<%= result.id %>"><%= result.name %></a>
-  </li>
-  <% end %>
-</ul>
+</div>
+<div class="searchdiv2">
+  <ul class="searchresultlist">
+    <h3 id="beef"><% @search_results.each do |result| %></h3>
+    <li>
+      <a href="/dates/<%= result.id %>"><%= result.name %></a>
+      <span id="heart1" class="heart-rating fa <%= (result.rating.<(1))? 'fa-heart-o ':'fa-heart' %>"></span>
+      <span id="heart2"class="heart-rating fa <%= (result.rating.<(2))? 'fa-heart-o ':'fa-heart' %>"></span>
+      <span id="heart3" class="heart-rating fa <%= (result.rating.<(3))? 'fa-heart-o heart-rating':'fa-heart' %>"></span>
+      <span id="heart4" class="heart-rating fa <%= (result.rating.<(4))? 'fa-heart-o heart-rating':'fa-heart' %>"></span>
+      <span id="heart5" class="heart-rating fa <%= (result.rating.<(5))? 'fa-heart-o heart-rating':'fa-heart' %>"></span>
 
+
+    </li>
+    <% end %>
+  </ul>
+</div>
 </div>

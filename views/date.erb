@@ -1,136 +1,135 @@
 <div class="date-page">
 
-<div class="date-header">
-  <h1><%= @date_idea.name %></h1>
-</div>
-<div>
-  <h3 id="clickaheart">Click on a heart to rate your date one to five!</h3>
-</div>
-<form action="/dates/<%= @date_idea.id %>/rating"  method="post">
-  <button id="heart1" class="heart-rating" value=1 name="rating">
-    <span class = "fa <%= (@date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
-  </button>
+  <div class="date-header">
+    <h1><%= @date_idea.name %></h1>
+  </div>
+  <div class="sleepy">
+    <h3 class="clickaheart">Click on a heart to rate your date one to five!</h3>
 
-  <button id="heart2" class="heart-rating" value=2 name="rating">
-    <span class = "fa <%= (@date_idea.rating().<(2))? 'fa-heart-o':'fa-heart' %>"></span>
-  </button>
+    <form action="/dates/<%= @date_idea.id %>/rating"  method="post">
+      <button id="heart1" class="heart-rating" value=1 name="rating">
+        <span class = "fa clickaheart <%= (@date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
+      </button>
 
-  <button id="heart3" class="heart-rating" value=3 name="rating">
-    <span class = "fa <%= (@date_idea.rating().<(3))? 'fa-heart-o':'fa-heart' %>"></span>
-  </button>
+      <button id="heart2" class="heart-rating" value=2 name="rating">
+        <span class = "fa <%= (@date_idea.rating().<(2))? 'fa-heart-o':'fa-heart' %>"></span>
+      </button>
 
-  <button id="heart4" class="heart-rating" value=4 name="rating">
-    <span class = "fa <%= (@date_idea.rating().<(4))? 'fa-heart-o':'fa-heart' %>"></span>
-  </button>
+      <button id="heart3" class="heart-rating" value=3 name="rating">
+        <span class = "fa <%= (@date_idea.rating().<(3))? 'fa-heart-o':'fa-heart' %>"></span>
+      </button>
 
-  <button id="heart5"  class="heart-rating animation-heart" value=5 name="rating">
-    <span class = "fa <%= (@date_idea.rating().<(5))? 'fa-heart-o':'fa-heart' %>"></span>
-  </button>
-</form>
+      <button id="heart4" class="heart-rating" value=4 name="rating">
+        <span class = "fa <%= (@date_idea.rating().<(4))? 'fa-heart-o':'fa-heart' %>"></span>
+      </button>
 
-<!-- CATEGORIES -->
-
-<ul>
-  <li><strong>Address:</strong>
-    <% if @date_idea.address.!=("\n,").&(@date_idea.address.!=('')) %>
-    <%= @date_idea.address %>
-    <% else %>
-    no address given
-    <% end %>
-  </li>
-  <li><strong>Description:</strong>
-    <% if @date_idea.description.!=('') %>
-    <%= @date_idea.description %>
-    <% else %>
-    no description given
-    <% end %>
-  </li>
-</ul>
-
-<!-- EDIT DATE -->
-
-<div class="big-button-container">
-  <button class="big-button"><a href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
-</div>
-
-<!-- CATEGORIES -->
-
-<h3><strong>Categories:</strong></h3>
-<% if @date_idea.tags == [] %>
-<p>There are no categories for this date yet, add them below!</p>
-<% else %>
-<ul class="catbox">
-  <% @date_idea.tags.each do |tag| %>
-  <li>
-    <form action="/tags/<%= tag.id %>/remove/<%= @date_idea.id %>" method="post">
-      <input type="hidden" name="_method" value="patch">
-      <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-      <%= tag.name %>
-    </form>
-  </li>
-  <% end %>
-</ul>
-<% end %>
-
-
-
-<h3><strong>Add Categories to this date</strong></h3>
-<% if @tags == [] %>
-<p>There are no categories to save to the date.</p>
-<% else %>
-<ul class="catbox">
-  <% @tags.each do |tag| %>
-  <li>
-    <form action="/tags/<%= tag.id %>/add/<%= @date_idea.id %>" method="post">
-      <input type="hidden" name="_method" value="patch">
-      <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
-      <span class="tagname"><%= tag.name %></span>
-    </form>
-  </li>
-  <% end %>
-</ul>
-<% end %>
-
-
-<div class="formcontent">
-
-  <h3>Add Categories to Help Organize Your dates!</h3>
-  <div>
-    <%= erb(:errors, :locals => { :object => @tag }) %>
-    <form class="addcatform" action="/tags/<%= @date_idea.id %>" method="post">
-      <input type="text" name="tag_name" id="tag_name">
-      <button class="addcatbutton" type="submit">Add Category</button>
+      <button id="heart5"  class="heart-rating animation-heart" value=5 name="rating">
+        <span class = "fa <%= (@date_idea.rating().<(5))? 'fa-heart-o':'fa-heart' %>"></span>
+      </button>
     </form>
   </div>
-</div>
-
-<div class="datelogdiv">
-
-  <div class="currentlogs">
-    <h2>Date Log:</h2>
-    <% if @date_idea.datelogs == [] %>
-      <p>There are no date logs yet. Log your date here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
-    <% else %>
-
+  <!-- CATEGORIES -->
+  <div class="sleepy-categories">
     <ul>
-      <% @date_idea.datelogs.order('rendezvous_time DESC').each do |datelog| %>
-      <li><a href = "/datelogs/<%= datelog.id %>"><%= datelog.rendezvous_time %>: <%= datelog.romantic_interest %></a></li>
+      <li><strong>Address:</strong>
+        <% if @date_idea.address.!=("\n,").&(@date_idea.address.!=('')) %>
+        <%= @date_idea.address %>
+        <% else %>
+        no address given
+        <% end %>
+      </li>
+      <li><strong>Description:</strong>
+        <% if @date_idea.description.!=('') %>
+        <%= @date_idea.description %>
+        <% else %>
+        no description given
+        <% end %>
+      </li>
+    </ul>
+
+  <!-- EDIT DATE -->
+
+  <div class="big-button-container">
+    <button class="big-button"><a class="move-it" href='/dates/<%= @date_idea.id %>/edit'>Edit Date</a></button>
+
+
+    <!-- CATEGORIES -->
+
+    <h3><strong>Categories:</strong></h3>
+    <% if @date_idea.tags == [] %>
+    <p>There are no categories for this date yet, add them below!</p>
+    <% else %>
+    <ul class="catbox">
+      <% @date_idea.tags.each do |tag| %>
+      <li>
+        <form action="/tags/<%= tag.id %>/remove/<%= @date_idea.id %>" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <%= tag.name %>
+        </form>
+      </div>
+
+      </li>
       <% end %>
     </ul>
     <% end %>
+    <h3><strong>Add Categories to this date</strong></h3>
+    <% if @tags == [] %>
+    <p>There are no categories to save to the date.</p>
+    <% else %>
+    <ul class="catbox">
+      <% @tags.each do |tag| %>
+      <li>
+        <form action="/tags/<%= tag.id %>/add/<%= @date_idea.id %>" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          <span class="tagname"><%= tag.name %></span>
+        </form>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+
+
+  <div class="formcontent">
+
+    <h3>Add Categories to Help Organize Your dates!</h3>
+    <div>
+      <%= erb(:errors, :locals => { :object => @tag }) %>
+      <form class="addcatform" action="/tags/<%= @date_idea.id %>" method="post">
+        <input type="text" name="tag_name" id="tag_name">
+        <button class="addcatbutton" type="submit">Add Category</button>
+      </form>
+    </div>
   </div>
 
-  <div class="newdatelog">
-    <h2>Enter a New Date Log:</h2>
-    <%= erb(:errors, :locals => { :object => @datelog }) %>
-    <form class="datelogform" action="/datelogs/<%= @date_idea.id %>" method="post">
-      <label for="rendezvous_time">When did you go on your date?</label>
-      <input type="date" name="rendezvous_time" id="rendezvous_time">
-      <label for="romantic_interest">Please enter any persons you went on the date with:</label>
-      <input type="text" name="romantic_interest" id="romantic_interest">
-      <label for="notes">Add notes here:</label>
-      <textarea name="notes" id="notes" rows="6"></textarea>
-      <button type="submit">Log Date</button>
-    </form>
+  <div class="datelogdiv">
+
+    <div class="currentlogs">
+      <h2>Date Log:</h2>
+      <% if @date_idea.datelogs == [] %>
+      <p>There are no date logs yet. Log your date here <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+      <% else %>
+
+      <ul>
+        <% @date_idea.datelogs.order('rendezvous_time DESC').each do |datelog| %>
+        <li><a href = "/datelogs/<%= datelog.id %>"><%= datelog.rendezvous_time %>: <%= datelog.romantic_interest %></a></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+
+    <div class="newdatelog">
+      <h2>Enter a New Date Log:</h2>
+      <%= erb(:errors, :locals => { :object => @datelog }) %>
+      <form class="datelogform" action="/datelogs/<%= @date_idea.id %>" method="post">
+        <label for="rendezvous_time">When did you go on your date?</label>
+        <input type="date" name="rendezvous_time" id="rendezvous_time">
+        <label for="romantic_interest">Please enter any persons you went on the date with:</label>
+        <input type="text" name="romantic_interest" id="romantic_interest">
+        <label for="notes">Add notes here:</label>
+        <textarea name="notes" id="notes" rows="6"></textarea>
+        <button type="submit">Log Date</button>
+      </form>
+    </div>
   </div>
-</div>

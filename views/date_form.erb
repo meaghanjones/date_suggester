@@ -1,35 +1,34 @@
 <div class="newdatecontainer">
-    <div>
-      <form class="dateform" action="/dates" method="post" class="form-container">
+  <div class="addNewDateTitle">
+    <h1>Add a New Date</h1>
+  </div>
+  <div class="formbg">
+    <form class="dateform" action="/dates" method="post" class="form-container">
+      <%= erb(:errors, :locals => { :object => @date_idea }) %>
+      <div class="form-group">
+        <input type="text" name="name" id="name" placeholder="Date Idea">
+      </div>
+      <p id="datelocal">Date Location:</p>
+      <div class="form-group">
+        <input type="text" name="street" id="street" placeholder="Street">
+      </div>
+      <div class="form-group">
+        <input type="text" name="city" id="city" placeholder="City">
+      </div>
+      <div class="form-group">
+        <input maxlength="2" type="text" name="state"  id="state" placeholder="State">
+      </div>
+      <div>
+        <textarea name="description" rows="8" placeholder="Description"></textarea>
+      </div>
 
-        <div class="addNewDateTitle">
-          <h1>Add a New Date</h1>
-        </div>
-        <%= erb(:errors, :locals => { :object => @date_idea }) %>
-        <div class="form-group">
-          <input type="text" name="name" id="name" placeholder="Date Idea">
-        </div>
-        <p id="datelocal">Date Location:</p>
-        <div class="form-group">
-          <input type="text" name="street" id="street" placeholder="Street">
-        </div>
-        <div class="form-group">
-          <input type="text" name="city" id="city" placeholder="City">
-        </div>
-        <div class="form-group">
-          <input maxlength="2" type="text" name="state"  id="state" placeholder="State">
-        </div>
-        <div>
-          <textarea name="description" rows="8" placeholder="Description"></textarea>
-        </div>
-
-        <div class="dateButtons">
-          <button class="addDate" type="submit">Add Date</button>
-        </div>
-
-      </form>
-    </div>
-
+      <div class="dateButtons">
+        <button class="addDate" type="submit">Add Date</button>
+        <p></p>
+      </div>
+    </form>
+  </div>
 </div>
-
+<div class="endoftheline">
+  <p></p>
 </div>
