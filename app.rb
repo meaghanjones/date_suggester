@@ -22,12 +22,9 @@ post '/dates' do
   city = params[:city]
   state = params[:state]
   description = params[:description]
-  tag_ids = params[:tag_ids]
   address = "#{street}\n#{city},#{state}"
   rating = 0
-  @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating, :tag_ids => tag_ids})
-  @tags = Tag.all
-  @tag = Tag.new
+  @date_idea = DateIdea.create({:name => name, :address => address, :description => description, :rating => rating})
   if @date_idea.save
     redirect to "/dates/#{@date_idea.id}"
   else
@@ -44,6 +41,7 @@ get '/dates/:id' do
   @date_idea = DateIdea.find(params.fetch('id').to_i)
   @tags = Tag.all - @date_idea.tags
   @datelog = Datelog.new
+  @tag = Tag.new
   erb(:date)
 end
 
@@ -95,19 +93,6 @@ get '/tags/new' do
   erb(:tag_form)
 end
 
-post '/tags' do
-  tag_name = params.fetch('tag_name')
-  @tag = Tag.create(:name => tag_name)
-  @tags = Tag.all
-  @date_idea = DateIdea.new
-  if @tag.save
-    redirect back
-  else
-    erb(:date_form)
-  end
-
-end
-
 post '/tags/onpage' do
   tag_name = params.fetch('tag_name')
   @tag = Tag.create(:name => tag_name)
@@ -118,6 +103,21 @@ post '/tags/onpage' do
     erb(:tags)
   end
 end
+
+post '/tags/:date_idea_id' do
+  tag_name = params.fetch('tag_name')
+  @tag = Tag.create(:name => tag_name)
+  @tags = Tag.all
+  @datelog = Datelog.new
+  @date_idea = DateIdea.find(params.fetch('date_idea_id').to_i)
+  if @tag.save
+    redirect("/dates/#{@date_idea.id}")
+  else
+    erb(:date)
+  end
+
+end
+
 
 get '/tags' do
   @tags = Tag.all()
@@ -213,7 +213,17 @@ end
 
 post '/dates/search' do
   date_idea_search = params.fetch('date_idea_search').titlecase
-  @search_results = DateIdea.where("name LIKE ?", "%#{date_idea_search}%")
+  @search_results = []
+  date_search_results = DateIdea.where("name LIKE ?", "%#{date_idea_search}%")
+  tag_search_results = Tag.where("name LIKE ?", "%#{date_idea_search}%")
+  tag_search_results.each do |tag|
+    tag.date_ideas.each() do |idea|
+      @search_results.push(idea)
+    end
+  end
+  date_search_results.each do |date|
+    @search_results.push(date)
+  end
   if @search_results.!=([])
     erb(:search_results)
   else

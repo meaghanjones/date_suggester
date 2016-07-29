@@ -1,0 +1,77 @@
+.updatecontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: dimgrey;
+  padding: 20px;
+}
+
+.editform {
+  @include forms(500px);
+}
+
+.deleteform {
+
+  button {
+    height: 40px;
+    width: 200px;
+    border: none;
+    background: lighten(red, 20%);
+
+    &:hover {
+      background: lighten(red, 25%);
+      cursor: pointer;
+    }
+  }
+}
+
+h1 {
+  a {
+    text-decoration: none;
+    color: lighten($pink, 5%);
+  }
+}
+
+#backbutton {
+  border: none;
+  background:$blue;
+  height: 40px;
+  padding: 5px;
+
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  &:hover{
+    background: lighten($blue, 10%);
+  }
+}
+
+//Edit Date Log
+
+.companionlist {
+  li {
+    margin-top: 10px;
+    color: white;
+  }
+}
+
+.editlogdiv {
+  background: dimgrey;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  .editlogform {
+    label {
+      color: white;
+      padding-top: 10px;
+    }
+  }
+}
+
+.editlogform {
+  @include forms(500px);
+}

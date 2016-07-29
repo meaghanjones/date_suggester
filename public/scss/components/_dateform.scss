@@ -2,7 +2,8 @@
 
 .newdatecontainer {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  justify-content: center;
   background: dimgrey;
   padding: 20px;
 
@@ -23,6 +24,8 @@
   display: none;
 
   .checkbox {
+    display: flex;
+
     input {
       margin: 20px;
 
@@ -48,10 +51,7 @@ input[type="checkbox"] {
     cursor: pointer;
   }
 }
-//Toggle List Display
-.showstuff {
-  display: none;
-}
+
 
 #showlist {
   height: 40px;
@@ -66,4 +66,13 @@ input[type="checkbox"] {
     background: $darkpink;
     cursor: pointer;
   }
+}
+
+//Blank Name Error
+#errormessage {
+  color: darken(red, 10%);
+}
+
+#datelocal {
+  color: $pink;
 }

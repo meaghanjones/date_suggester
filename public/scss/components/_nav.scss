@@ -19,6 +19,12 @@
     width: auto;
     margin-right: 0;
 
+    a{
+      text-decoration: none;
+      // font-weight: bold;
+      font-size: 20px;
+    }
+
     #dates,
     #newdates,
     #cats {
@@ -29,12 +35,6 @@
       &:hover{
         background: lighten($blue, 5%);
         cursor: pointer;
-      }
-
-      a{
-        text-decoration: none;
-        // font-weight: bold;
-        font-size: 20px;
       }
     }
     #dates {
@@ -65,6 +65,7 @@
   }
 }
 
+
 .searchform {
   display: flex;
   flex-direction: column;
@@ -85,6 +86,41 @@
       cursor: pointer;
       background: lighten($blue, 5%);
       color: black;
+    }
+  }
+}
+
+//Search Results
+
+.searchdiv {
+  background: dimgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+
+  .searchresultlist {
+    padding: 0;
+
+    span {
+      padding-right: 5px;
+    }
+
+    li {
+      padding-top: 30px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: $pink;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+          background: $green;
+          color: black;
+        }
+      }
     }
   }
 }
