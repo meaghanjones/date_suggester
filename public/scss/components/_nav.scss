@@ -18,11 +18,12 @@
     justify-content: flex-end;
     width: auto;
     margin-right: 0;
-
+    color: white;
     a{
       text-decoration: none;
       // font-weight: bold;
       font-size: 20px;
+      color: white;
     }
 
     #dates,
@@ -31,6 +32,7 @@
       width: 200px;
       height: 100%;
       border: none;
+      color: dimgrey;
 
       &:hover{
         background: lighten($blue, 5%);
@@ -91,20 +93,30 @@
 }
 
 //Search Results
-
 .searchdiv {
+  background-color: $purple;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .searchcolor {
+    display: flex;
+    color: $blue;
+  }
+}
+
+.searchdiv2 {
   background: dimgrey;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 
   .searchresultlist {
-    padding: 0;
+    padding: 1em;
 
-    span {
-      padding-right: 5px;
-    }
+    // span {
+    //   padding: 5px;
+    // }
 
     li {
       padding-top: 30px;
@@ -112,9 +124,10 @@
       a {
         text-decoration: none;
         color: white;
-        background: $pink;
+        background: $blue;
         padding: 10px;
         border-radius: 10px;
+        // margin: 1em;
 
         &:hover {
           background: $green;

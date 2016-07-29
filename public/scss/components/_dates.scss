@@ -1,51 +1,43 @@
-.clickaheart {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: $pink;
-}
-
-.date-page {
+.listdatespic {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-content: center;
-
-  h1{
-    display: flex;
-    flex-direction: row;
-    color: white;
-    // padding: 50px;
-    // margin: 0;
+  align-items: center;
+  background: $purple;
+  // padding: 20px;
+  h1 {
+    color: $blue;
   }
 }
 
-.date-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: darken($green, 12%);
-
-}
-
-.sleepy {
-  display: flex;
-  flex-direction: row;
-  background-color: dimgrey;
-  flex-direction: column;
-  text-align: center;
-}
-
-.sleepy-categories {
+.datelist {
   display: flex;
   flex-direction: column;
-  background-color: $blue;
-  li {
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  background: dimgrey;
+  padding: 20px;
+}
+
+.datesform {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: $blue;
+  a {
+    text-decoration: none;
   }
+  h3 {
+    color: $blue;
+  }
+  h3:hover {
+    background: $pink;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
 }
+}
+
 
 .heart-rating {
   cursor: pointer;
@@ -110,7 +102,8 @@
 
   &#heart3 {
     color: #D8459D;
-    font-size: 50px;    @include kaboom;
+    font-size: 50px;
+    @include kaboom;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -186,128 +179,6 @@
       animation-iteration-count: infinite;
       -webkit-animation-direction: alternate;
       animation-direction: alternate;
-    }
-  }
-}
-
-.big-button {
-  border: none;
-  height: 40px;
-  width: 150px;
-  background: $darkpink;
-
-  a{
-    text-decoration: none;
-    color: white;
-  }
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
-}
-
-.datelogdiv {
-  background: $pink;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-
-  .currentlogs {
-    margin: 5px;
-    width: 30%;
-    border-radius: 20px;
-
-    ul {
-      padding: 0;
-
-      li {
-        margin-top: 50px;
-        a{
-          background: white;
-          padding: 10px;
-          text-decoration: none;
-          color: black;
-          border-radius: 10px;
-
-          &:hover {
-            font-weight: bold;
-            color: $blue;
-          }
-        }
-      }
-    }
-  }
-
-  .newdatelog {
-    margin: 5px;
-    width: 30%;
-    .datelogform {
-      margin: 0 auto;
-      @include forms(400px);
-
-      label {
-        color: white;
-      }
-    }
-  }
-}
-
-//Category List styling
-
-.addcatdiv {
-  // background: $blue;
-
-  h3 {
-    padding-top: 10px;
-  }
-
-}
-
-//Current category styling
-.formcontent {
-
-
-  background: $pink;
-  display: flex;
-  flex-direction: column;
-
-  h3 {
-    color: white;
-  }
-
-  div {
-    align-self: center;
-  }
-}
-
-//Category box
-.catbox {
-  padding: 0;
-  margin: 10px auto;
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  li {
-    display: flex;
-    width: 30%;
-    background: $yellow;
-    border-radius: 5px;
-    margin: 5px;
-
-    form {
-      button{
-        border: none;
-        background: transparent;
-        color: $pink;
-        font-size: 40px;
-      }
-
-      .tagname {
-        font-size: 17px;
-      }
     }
   }
 }

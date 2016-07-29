@@ -1,34 +1,37 @@
 <div class="listdatespic">
   <h1>Dates</h1>
-  <p>Click on hearts to rate a date with 1-5 hearts. <br>Click on a date to view or add more information.</p>
+
 </div>
 
 <div class="datelist">
+    <h3>Click on hearts to rate a date with 1-5 hearts. <br>Click on a date to view or add more information.</h3>
   <% if @date_ideas == [] %>
   <p>There are no dates saved in the database yet.</p>
   <% else %>
   <ul>
     <% @date_ideas.each() do |date_idea| %>
     <li>
-      <form action="/dates/<%= date_idea.id %>/rate" method="post">
+
+      <form class="datesform" action="/dates/<%= date_idea.id %>/rate" method="post">
+        <a href='/dates/<%= date_idea.id() %>'><h3><%= date_idea.name %></h3></a>
         <input type="hidden" name="_method" value="patch">
-        <button id="heart_1" value=1 name="rating">
+        <button id="heart1" class="heart-rating" value=1 name="rating">
           <span class = "fa <%= (date_idea.rating.<(1))? 'fa-heart-o':'fa-heart' %>"></span>
         </button>
-        <button id="heart_2" value=2 name="rating">
+        <button id="heart2" class="heart-rating" value=2 name="rating">
           <span class = "fa <%= (date_idea.rating.<(2))? 'fa-heart-o':'fa-heart' %>"></span>
         </button>
-        <button id="heart_3" value=3 name="rating">
+        <button id="heart3" class="heart-rating" value=3 name="rating">
           <span class = "fa <%= (date_idea.rating.<(3))? 'fa-heart-o':'fa-heart' %>"></span>
         </button>
-        <button id="heart_4" value=4 name="rating">
+        <button id="heart4" class="heart-rating" value=4 name="rating">
           <span class = "fa <%= (date_idea.rating.<(4))? 'fa-heart-o':'fa-heart' %>"></span>
         </button>
-        <button id="heart_5" value=5 name="rating">
+        <button id="heart5" class="heart-rating" value=5 name="rating">
           <span class = "fa <%= (date_idea.rating.<(5))? 'fa-heart-o':'fa-heart' %>"></span>
         </button>
 
-        <a href='/dates/<%= date_idea.id() %>'><%= date_idea.name %></a>
+
       </form>
     </li>
     <% end %>
